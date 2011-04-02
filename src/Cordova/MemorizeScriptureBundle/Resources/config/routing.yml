@@ -1,0 +1,7 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: MemorizeScripture:Tracker:welcome }
+
+MemorizeScripture:
+    pattern:  /Tracker
+    defaults: { _controller: MemorizeScripture:Tracker:index }

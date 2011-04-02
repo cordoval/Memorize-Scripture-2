@@ -1,0 +1,3 @@
+
+MemorizeScripture:
+    resource: "@MemorizeScripture/Resources/config/routing.yml"
