@@ -1,19 +1,19 @@
 <?php
 
-namespace Vendor\FirstBundle\DataFixtures\ORM;
+namespace Cordova\MemorizeScriptureBundle\DataFixtures\ORM;
  
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Vendor\FirstBundle\Entity\Category;
-use Vendor\FirstBundle\Entity\Post;
-use Vendor\FirstBundle\Entity\Tag;
-use Vendor\FirstBundle\Entity\User;
-use Vendor\FirstBundle\Entity\Session;
-use Vendor\FirstBundle\Entity\Role;
-use Vendor\FirstBundle\Entity\Bible;
-use Vendor\FirstBundle\Entity\Book;
-use Vendor\FirstBundle\Entity\Chapter;
-use Vendor\FirstBundle\Entity\Verse;
-use Vendor\FirstBundle\Entity\SessionVerse;
+use Cordova\MemorizeScriptureBundle\Entity\Category;
+use Cordova\MemorizeScriptureBundle\Entity\Post;
+use Cordova\MemorizeScriptureBundle\Entity\Tag;
+use Cordova\MemorizeScriptureBundle\Entity\User;
+use Cordova\MemorizeScriptureBundle\Entity\Session;
+use Cordova\MemorizeScriptureBundle\Entity\Role;
+use Cordova\MemorizeScriptureBundle\Entity\Bible;
+use Cordova\MemorizeScriptureBundle\Entity\Book;
+use Cordova\MemorizeScriptureBundle\Entity\Chapter;
+use Cordova\MemorizeScriptureBundle\Entity\Verse;
+use Cordova\MemorizeScriptureBundle\Entity\SessionVerse;
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
 include(__DIR__ . '/../../Scrap/scrap.php');
@@ -142,6 +142,7 @@ class FixtureLoader implements FixtureInterface
 		    }
 	    }
 
+	/*
         // created a session sample with user john.doe and title test session
         $session = new Session();
         $session->setTitle('test session');
@@ -160,7 +161,7 @@ class FixtureLoader implements FixtureInterface
         
 
 	    $manager->persist($sessionverse);
-
+	*/
         $manager->flush();
     }
 }
