@@ -146,11 +146,17 @@ class FixtureLoader implements FixtureInterface
         // created a session sample with user john.doe and title test session
         $session = new Session();
         $session->setTitle('test session');
-        $session->setUser($user);  // passing an instance defined above of entity User
+        $session->setUser($user);
+
+Luis coding here-->
+$newUser = new User();
+$session->getUser()->add($newUser);
+$newsession->setAuthor($user);
+
 
 	    $manager->persist($session);
 
-        // created a sessionverse sample
+/*        // created a sessionverse sample
         $sessionverse = new SessionVerse();
         $sessionverse->setRecitedyesno('no');
         $sessionverse->setRecitedTimes('4');
@@ -161,7 +167,7 @@ class FixtureLoader implements FixtureInterface
         
 
 	    $manager->persist($sessionverse);
-	
+*/	
         $manager->flush();
     }
 }
