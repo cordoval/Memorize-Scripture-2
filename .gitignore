@@ -1,3 +1,4 @@
 app/cache/*
 app/logs/*
+app/config/config.yml
 app/phpunit.xml
