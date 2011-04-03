@@ -142,7 +142,7 @@ class FixtureLoader implements FixtureInterface
 		    }
 	    }
 
-	/*
+	
         // created a session sample with user john.doe and title test session
         $session = new Session();
         $session->setTitle('test session');
@@ -161,7 +161,7 @@ class FixtureLoader implements FixtureInterface
         
 
 	    $manager->persist($sessionverse);
-	*/
+	
         $manager->flush();
     }
 }

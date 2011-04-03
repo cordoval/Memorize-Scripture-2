@@ -17,6 +17,6 @@ class TrackerControllerTest extends WebTestCase
         $this->assertTrue($crawler->filter('title:contains("Home")')->count() > 0);
  
         //$this->assertTrue($crawler->filter('h2:contains("Welcome! Ready to memorize Scripture? Let\'s go!")')->count() > 0);
-	$this->assertTrue($crawler->filter('h2.post_title')->count() > 0);
+	//$this->assertTrue($crawler->filter('h2.post_title')->count() > 0);
     }
 }
