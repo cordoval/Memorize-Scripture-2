@@ -1,0 +1,7 @@
+<ul class="post_tags">
+    {% for tag in tags %}
+        <li>{{ tag.name }}</li>
+    {% else %}
+        <li>No tags found.</li>
+    {% endfor %}
+</ul>

@@ -1,5 +1,16 @@
 {% extends "MemorizeScripture::layout.html.twig" %}
+{% extends "VendorFirst::layout.html.twig" %}
 
+{% block title %}
+    Memorize Scripture | Home
+{% endblock %}
+ 
 {% block content %}
-    MemorizeScripture!
+    <h2>Tracker</h2>
+    {% debug sessionverses %}
+    {% for sessionverse in sessionverses %}
+	    {% include 'VendorFirst:Tracker:sessionverse.html.twig' with { 'sessionverse': sessionverse } %}
+	{% else %}
+	    There are no sessionverses loaded
+    {% endfor %}
 {% endblock %}

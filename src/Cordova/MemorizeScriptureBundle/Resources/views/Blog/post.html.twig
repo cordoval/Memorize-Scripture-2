@@ -1,0 +1,12 @@
+<div class="post">
+    <h2 class="post_title">
+        {{ post.title }}
+    </h2>
+    <p class="post_info">
+        by {{ post.user.fullName }} on {{ post.createdAt | date('F jS, Y') }}
+    </p>
+    <p class="post_body">
+        {{ post.content }}
+    </p>
+    {% include 'VendorFirst:Blog:tags.html.twig' with { 'tags' : post.tags } %}
+</div>

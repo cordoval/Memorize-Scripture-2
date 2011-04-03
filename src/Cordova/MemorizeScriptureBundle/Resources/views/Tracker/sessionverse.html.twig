@@ -1,0 +1,11 @@
+<div class="post">
+    <h2 class="post_title">
+        {{ sessionverse.title }}
+    </h2>
+    <p class="post_info">
+        by {{ sessionverse.user.fullName }} on {{ sessionverse.createdAt | date('F jS, Y') }}
+    </p>
+    <p class="post_body">
+        {{ sessionverse.content }}
+    </p>
+</div>

@@ -9,21 +9,21 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new Symfony\Bundle\SecurityBundle\SecurityBundle(),		// added here but maybe it is not found
+            //new Symfony\Bundle\SecurityBundle\SecurityBundle(),		// added here but maybe it is not found
             new Symfony\Bundle\ZendBundle\ZendBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),  // added here but maybe it is not found
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),  // added here but maybe it is not found
+            //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),  // added here but maybe it is not found
+            //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),  // added here but maybe it is not found
             new Cordova\MemorizeScriptureBundle\MemorizeScriptureBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
-            $bundles[] = new Symfony\Bundle\WebConfiguratorBundle\SymfonyWebConfiguratorBundle(); // added here but maybe it is not found
+            //$bundles[] = new Symfony\Bundle\WebConfiguratorBundle\SymfonyWebConfiguratorBundle(); // added here but maybe it is not found
         }
 
         return $bundles;

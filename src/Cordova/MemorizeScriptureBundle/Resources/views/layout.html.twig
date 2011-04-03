@@ -1,7 +1,47 @@
 {% extends "::base.html.twig" %}
-
+ 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/vendorfirst/css/blog.css') }}" media="screen" />
+{% endblock %}
+ 
 {% block body %}
-    <h1>MemorizeScripture Application</h1>
-
-    {% block content %}{% endblock %}
+    <div id="container">
+        <header class="clearfix">
+            <h1>
+                Memorize Scripture
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ path('show_page', { 'page' : 'about' }) }}">
+                            About
+                        </a>
+                    </li>
+		    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		    <li>
+			<a href="{{ path('_security_logout') }}">
+				Logout
+			</a>
+		    </li>
+		    {% endif %}
+                </ul>
+            </nav>
+        </header>
+	<div class="clearfix">
+	        <div id="content">
+        	    {% block content %}No content.{% endblock %}
+	        </div>
+		<div id="sidebar">
+			{% block sidebar %}{% endblock %}
+		</div>
+	</div>
+        <footer class="clearfix">
+            <p class="symfony2">
+                Powered by the Gospel of Jesus Christ.
+            </p>
+            <p class="copy">
+                <a href="http://www.luzdevidapres.org" target="_blank">Iglesia Presbiteriana Luz de Vida</a> &copy; 2011
+            </p>
+        </footer>
+    </div>
 {% endblock %}
