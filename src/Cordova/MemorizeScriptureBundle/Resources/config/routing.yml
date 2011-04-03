@@ -1,6 +1,6 @@
 _security_login:
     pattern: /login
-    defaults: { _controller: VendorFirst:Security:login }
+    defaults: { _controller: MemorizeScripture:Security:login }
 
 _security_check:
     pattern: /login_check
@@ -10,28 +10,24 @@ _security_logout:
 
 admin_home:
     pattern: /admin/
-    defaults: { _controller: VendorFirst:Admin:index }
+    defaults: { _controller: MemorizeScripture:Admin:index }
 
 sessions_page:
     pattern:  /session
-    defaults: { _controller: VendorFirst:Session:index }
+    defaults: { _controller: MemorizeScripture:Session:index }
 
 MemorizeScripture:
-    pattern:  /Tracker
+    pattern:  /tracker
     defaults: { _controller: MemorizeScripture:Tracker:index }
-
-#tracker_page:
-#    pattern:  /tracker
-#    defaults: { _controller: VendorFirst:Tracker:index }
 
 show_page:
     pattern:  /{page}
-    defaults: { _controller: VendorFirst:Pages:show }
-
-#homepage:
-#    pattern:  /
-#    defaults: { _controller: VendorFirst:Blog:index }
+    defaults: { _controller: MemorizeScripture:Pages:show }
 
 homepage:
     pattern:  /
-    defaults: { _controller: MemorizeScripture:Tracker:welcome }
+    defaults: { _controller: MemorizeScripture:Blog:index }
+
+#homepage:
+#    pattern:  /
+#    defaults: { _controller: MemorizeScripture:Tracker:welcome }

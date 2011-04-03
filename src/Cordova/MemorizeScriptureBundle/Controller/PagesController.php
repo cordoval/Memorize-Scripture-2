@@ -2,7 +2,7 @@
 
 // PagesController.php
  
-namespace Vendor\FirstBundle\Controller;
+namespace Cordova\MemorizeScriptureBundle\Controller;
  
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  
@@ -11,7 +11,7 @@ class PagesController extends Controller
     public function showAction($page)
     {
         return $this->render(
-            sprintf( 'VendorFirst:Pages:%s.html.twig', $page )
+            sprintf( 'MemorizeScripture:Pages:%s.html.twig', $page )
         );
     }
 }

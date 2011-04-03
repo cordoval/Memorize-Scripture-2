@@ -8,7 +8,7 @@ class PostRepository extends EntityRepository
 {
     public function getLatestPosts($limit = 5)
     {
-        $dql = 'SELECT p, u, c, t FROM Vendor\FirstBundle\Entity\Post p ' .
+        $dql = 'SELECT p, u, c, t FROM Cordova\MemorizeScriptureBundle\Entity\Post p ' .
                'INNER JOIN p.user u INNER JOIN p.category c INNER JOIN ' .
                'p.tags t ORDER BY p.createdAt DESC';
  

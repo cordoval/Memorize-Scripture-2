@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\FirstBundle\Controller;
+namespace Cordova\MemorizeScriptureBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('VendorFirst:Default:index.html.twig');
+        return $this->render('MemorizeScripture:Default:index.html.twig');
     }
 }

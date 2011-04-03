@@ -9,7 +9,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            //new Symfony\Bundle\SecurityBundle\SecurityBundle(),		// added here but maybe it is not found
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),		// added here but maybe it is not found
             new Symfony\Bundle\ZendBundle\ZendBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),

@@ -10,9 +10,9 @@ class TrackerController extends Controller
     {
         //return $this->render('MemorizeScripture:Tracker:index.html.twig');
 	$em = $this->get('doctrine.orm.entity_manager');
-	$sessionverses = $em->getRepository('Vendor\FirstBundle\Entity\SessionVerse')->getLatestSessionVerses();
+	$sessionverses = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getLatestSessionVerses();
 	return $this->render(
-		'VendorFirst:Tracker:index.html.twig',
+		'MemorizeScripture:Tracker:index.html.twig',
 		array(
 			'sessionverses' => $sessionverses
 		)
@@ -21,6 +21,6 @@ class TrackerController extends Controller
     
     public function welcomeAction()
     {
-        return $this->render('MemorizeScripture:Tracker:welcome.html.twig');
+        return $this->render('MemorizeScripture:Tracker:index.html.twig');
     }
 }

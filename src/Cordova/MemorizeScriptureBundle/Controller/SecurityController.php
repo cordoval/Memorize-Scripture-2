@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\FirstBundle\Controller;
+namespace Cordova\MemorizeScriptureBundle\Controller;
  
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -15,7 +15,7 @@ class SecurityController extends Controller
             $error = $this->get('request')->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
         }
  
-        return $this->render('VendorFirst:Security:login.html.twig', array(
+        return $this->render('MemorizeScripture:Security:login.html.twig', array(
             'last_username' => $this->get('request')->getSession()->get(SecurityContext::LAST_USERNAME),
             'error' => $error
         ));

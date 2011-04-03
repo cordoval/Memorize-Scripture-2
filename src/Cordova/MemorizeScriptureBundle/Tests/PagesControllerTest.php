@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\FirstBundle\Tests\Controller;
+namespace Cordova\MemorizeScriptureBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  
