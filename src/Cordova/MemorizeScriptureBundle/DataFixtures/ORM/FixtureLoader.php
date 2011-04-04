@@ -150,7 +150,7 @@ class FixtureLoader implements FixtureInterface
 
 	    $manager->persist($session);
 
-/*        // created a sessionverse sample
+        // created a sessionverse sample
         $sessionverse = new SessionVerse();
         $sessionverse->setRecitedyesno('no');
         $sessionverse->setRecitedTimes('4');
@@ -158,10 +158,11 @@ class FixtureLoader implements FixtureInterface
         $sessionverse->setActiveDay('1');
         $sessionverse->setActiveMonth('1');
         $sessionverse->setActiveWeek('1');
-        
+        // need to do the same I did for user
+        $session->
 
 	    $manager->persist($sessionverse);
-*/
+
         $manager->flush();
     }
 }

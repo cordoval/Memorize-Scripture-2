@@ -5,8 +5,9 @@
 {% endblock %}
  
 {% block content %}
-    <h2>Tracker</h2>
+    <h2>Dashboard</h2>
     {#% debug users %#}
+    <br/>
     {% for user in users %}
 	    {% include 'MemorizeScripture:Tracker:user.html.twig' with { 'user': user } %}
 	{% else %}

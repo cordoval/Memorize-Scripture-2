@@ -1,11 +1,31 @@
 <div class="post">
     <h2 class="post_title">
-        {{ user.firstName }}
+        {{ user.firstName }} {{ user.lastName }}
     </h2>
     <p class="post_info">
-        by {#{ user.user.fullName }#} on {{ user.createdAt | date('F jS, Y') }}
+        User since: {{ user.createdAt | date('F jS, Y') }}
     </p>
+    <p class="post_info">
+        Email: {{ user.email }}
+    </p>
+    <p class="post_info">
+        Number of sessions: {{ user.sessions | length }}
+    </p>
+    <br/>
     <p class="post_body">
-        {#{ user.content }#}
+       <span>Active Sessions:</span>
+       <br><br>
+       <ul>
+       {% for key, session in user.sessions %}
+          <li>
+             Title:  {{ session.title }}
+            <ul>
+                <li>
+                    Number of verses: {{ session.sessionverses |length }}
+                </li>
+            </ul>
+          </li>
+       {% endfor %}
+       </ul>
     </p>
 </div>
