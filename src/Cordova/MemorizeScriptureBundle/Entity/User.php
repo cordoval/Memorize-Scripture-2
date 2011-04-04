@@ -143,6 +143,17 @@ class User implements UserInterface
     {
         return $this->createdAt;
     }
+
+    /**
+     * Set the user's session
+     *
+     * @param string $value The session.
+     */
+    public function setSessions( $value )
+    {
+        $this->sessions->getUser()->add($this);
+        $this->sessions = $value;
+    }
     
     /**
      * Gets all of the user's sessions
