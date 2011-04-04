@@ -86,7 +86,19 @@ class Session
     {
         $this->title = $value;
     }
-   
+
+
+    /**
+     * Set the session's sessionverses
+     *
+     * @param SessionVerse $value The sessionverse.
+     */
+    public function addSessionVerse( $value )
+    {
+        $value->setSession($this);
+        $this->sessionverses->add($value);
+    }
+
     /**
      * Gets the sessionverses of the session.
      * 
@@ -143,6 +155,7 @@ class Session
     public function __construct()
     {
         $this->createdAt = new \DateTime();
+        $this->sessionverses = new ArrayCollection();
     }
     
     /**

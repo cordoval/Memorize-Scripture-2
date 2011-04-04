@@ -159,7 +159,7 @@ class FixtureLoader implements FixtureInterface
         $sessionverse->setActiveMonth('1');
         $sessionverse->setActiveWeek('1');
         // need to do the same I did for user
-        $session->
+        $session->addSessionVerse($sessionverse);
 
 	    $manager->persist($sessionverse);
 

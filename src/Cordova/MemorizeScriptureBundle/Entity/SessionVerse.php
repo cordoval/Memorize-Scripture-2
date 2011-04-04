@@ -103,7 +103,27 @@ class SessionVerse
     {
         return $this->id;
     }
-    
+
+    /**
+     * Gets the session who created the sessionverse.
+     *
+     * @return Session A Session object
+     */
+    public function getSession()
+    {
+        return $this->session;
+    }
+
+    /**
+     * Sets the session who created the sessionverse.
+     *
+     * @param Session $value The session
+     */
+    public function setSession( Session $value )
+    {
+        $this->session = $value;
+    }
+
     /**
      * Gets the verse_id of the sessionverse.
      * 
