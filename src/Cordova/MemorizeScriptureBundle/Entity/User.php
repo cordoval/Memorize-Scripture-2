@@ -147,12 +147,12 @@ class User implements UserInterface
     /**
      * Set the user's session
      *
-     * @param string $value The session.
+     * @param Session $value The session.
      */
-    public function setSessions( $value )
+    public function addSession( $value )
     {
-        $this->sessions->getUser()->add($this);
-        $this->sessions = $value;
+        $value->setUser($this);
+        $this->sessions->add($value);
     }
     
     /**
@@ -273,7 +273,8 @@ class User implements UserInterface
     public function __construct()
     {
         $this->posts = new ArrayCollection();
-	$this->userRoles = new ArrayCollection();
+        $this->sessions = new ArrayCollection();
+	    $this->userRoles = new ArrayCollection();
         $this->createdAt = new \DateTime();
     }
 

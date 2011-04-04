@@ -146,7 +146,7 @@ class FixtureLoader implements FixtureInterface
         // created a session sample with user john.doe and title test session
         $session = new Session();
         $session->setTitle('test session');
-        $user->setSessions($session);
+        $user->addSession($session);
 
 	    $manager->persist($session);
 
