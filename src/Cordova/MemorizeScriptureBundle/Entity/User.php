@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @orm:Entity
+ * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository")
  * @orm:Table(name="user")
  */
 class User implements UserInterface

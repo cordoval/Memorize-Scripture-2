@@ -6,10 +6,10 @@
  
 {% block content %}
     <h2>Tracker</h2>
-    {% debug sessionverses %}
-    {% for sessionverse in sessionverses %}
-	    {% include 'MemorizeScripture:Tracker:sessionverse.html.twig' with { 'sessionverse': sessionverse } %}
+    {#% debug users %#}
+    {% for user in users %}
+	    {% include 'MemorizeScripture:Tracker:user.html.twig' with { 'user': user } %}
 	{% else %}
-	    There are no sessionverses loaded
+	    There are no users loaded
     {% endfor %}
 {% endblock %}

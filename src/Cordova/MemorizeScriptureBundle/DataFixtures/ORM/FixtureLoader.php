@@ -161,7 +161,7 @@ class FixtureLoader implements FixtureInterface
         
 
 	    $manager->persist($sessionverse);
-*/	
+*/
         $manager->flush();
     }
 }

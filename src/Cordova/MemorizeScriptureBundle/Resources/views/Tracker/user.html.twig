@@ -1,0 +1,11 @@
+<div class="post">
+    <h2 class="post_title">
+        {{ user.firstName }}
+    </h2>
+    <p class="post_info">
+        by {#{ user.user.fullName }#} on {{ user.createdAt | date('F jS, Y') }}
+    </p>
+    <p class="post_body">
+        {#{ user.content }#}
+    </p>
+</div>
