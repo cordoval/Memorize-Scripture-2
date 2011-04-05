@@ -29,7 +29,7 @@ class SessionVerse
     protected $session;
     
     /**
-     * @orm:ManyToOne(targetEntity="Verse", mappedBy="sessionverses")
+     * @orm:ManyToOne(targetEntity="Verse", inversedBy="sessionverses")
      * @orm:JoinColumn(name="verse_id", referencedColumnName="id")
      * 
      * @var Verse $verse

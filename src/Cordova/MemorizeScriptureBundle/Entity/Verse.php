@@ -20,7 +20,7 @@ class Verse
     protected $id;
     
     /**
-     * @orm:OneToMany(targetEntity="SessionVerse", inversedBy="verse")
+     * @orm:OneToMany(targetEntity="SessionVerse", mappedBy="verse")
      * @orm:OrderBy({"createdAt" = "DESC"})
      *
      * @var ArrayCollection $sessionverses

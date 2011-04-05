@@ -154,14 +154,16 @@ class FixtureLoader implements FixtureInterface
         $sessionverse = new SessionVerse();
         $sessionverse->setRecitedyesno('no');
         $sessionverse->setRecitedTimes('4');
-        $sessionverse->setVerse('5');  // sets the verse_id
         $sessionverse->setActiveDay('1');
         $sessionverse->setActiveMonth('1');
         $sessionverse->setActiveWeek('1');
-        // need to do the same I did for user
         $session->addSessionVerse($sessionverse);
 
-	    $manager->persist($sessionverse);
+        $manager->persist($sessionverse);
+
+        
+        // set $verse->text == $sessionverse->getInputfromuser
+        $verse->addSessionVerse($sessionverse);
 
         $manager->flush();
     }
