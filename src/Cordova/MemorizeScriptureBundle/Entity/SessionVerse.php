@@ -28,7 +28,11 @@ class SessionVerse
      */
     protected $session;
     
-    /** @orm:OneToOne(targetEntity="Verse", mappedBy="sessionverse") */
+    /**
+     * @orm:ManyToOne(targetEntity="Verse", mappedBy="sessionverse")
+     *
+     * @var Verse $verse
+     */
     private $verse;
     
     /**
@@ -125,9 +129,9 @@ class SessionVerse
     }
 
     /**
-     * Gets the verse_id of the sessionverse.
+     * Gets the verse of the sessionverse.
      * 
-     * @return string verse_id
+     * @return Verse sessionverse verse
      */
     public function getVerse()
     {
@@ -135,12 +139,13 @@ class SessionVerse
     }
     
     /**
-     * Sets the verse_id of the sessionverse.
+     * Sets the verse for the sessionverse.
      * 
-     * @param string $value verse_id
+     * @param Verse $value The verse
      */
     public function setVerse( $value )
     {
+        $value->setSessionVerse($this);
         $this->verse = $value;
     }
     

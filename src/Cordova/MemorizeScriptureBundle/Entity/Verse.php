@@ -19,7 +19,11 @@ class Verse
      */
     protected $id;
        
-    /** @orm:OneToOne(targetEntity="SessionVerse", inversedBy="verse") */
+    /**
+     * @orm:OneToOne(targetEntity="SessionVerse", inversedBy="verse")
+     *
+     * @var SessionVerse $sessionverse
+     */
     private $sessionverse;
 
     /**
