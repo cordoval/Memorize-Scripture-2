@@ -18,13 +18,14 @@ class Verse
      * @var integer $id
      */
     protected $id;
-       
+    
     /**
-     * @orm:OneToOne(targetEntity="SessionVerse", inversedBy="verse")
+     * @orm:OneToMany(targetEntity="SessionVerse", inversedBy="verse")
+     * @orm:OrderBy({"createdAt" = "DESC"})
      *
-     * @var SessionVerse $sessionverse
+     * @var ArrayCollection $sessionverses
      */
-    private $sessionverse;
+    private $sessionverses;
 
     /**
      * @orm:Column(type="text")
@@ -32,7 +33,28 @@ class Verse
      * @var string $versenum
      */
     protected $versenum;
-      
+
+    /**
+     * Gets the sessionverses of the verse.
+     *
+     * @return ArrayCollection $sessionverses
+     */
+    public function getSessionVerses()
+    {
+        return $this->sessionverses;
+    }
+
+    /**
+     * Sets the verse sessionverses.
+     *
+     * @param SessionVerse $value sessionverse
+     */
+    public function addSessionVerse( $value )
+    {
+        $value->setVerse($this);
+        $this->sessionverses->add($value);
+    }
+
     /**
      * Gets the id.
      * 
@@ -97,6 +119,7 @@ class Verse
      */
     public function __construct()
     {
+        $this->sessionverses = new ArrayCollection();
     }
     
     /**

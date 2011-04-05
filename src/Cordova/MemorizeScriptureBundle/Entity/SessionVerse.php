@@ -29,8 +29,9 @@ class SessionVerse
     protected $session;
     
     /**
-     * @orm:ManyToOne(targetEntity="Verse", mappedBy="sessionverse")
-     *
+     * @orm:ManyToOne(targetEntity="Verse", mappedBy="sessionverses")
+     * @orm:JoinColumn(name="verse_id", referencedColumnName="id")
+     * 
      * @var Verse $verse
      */
     private $verse;
@@ -145,7 +146,7 @@ class SessionVerse
      */
     public function setVerse( $value )
     {
-        $value->setSessionVerse($this);
+        //$value->addSessionVerse($this);
         $this->verse = $value;
     }
     

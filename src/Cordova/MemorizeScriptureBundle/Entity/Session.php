@@ -102,7 +102,7 @@ class Session
     /**
      * Gets the sessionverses of the session.
      * 
-     * @return string The session sessionverse
+     * @return ArrayCollection The session sessionverses
      */
     public function getSessionVerses()
     {
