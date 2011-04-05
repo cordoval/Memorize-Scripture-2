@@ -157,6 +157,10 @@ class FixtureLoader implements FixtureInterface
         $sessionverse->setActiveDay('1');
         $sessionverse->setActiveMonth('1');
         $sessionverse->setActiveWeek('1');
+        $sessionverse->setExtendedRecitedTimes('1');
+        $sessionverse->setRecitedTimes('1');
+        $todaysdate = new \DateTime("now");
+        $sessionverse->setEntryDate($todaysdate);
         $session->addSessionVerse($sessionverse);
 
         $manager->persist($sessionverse);

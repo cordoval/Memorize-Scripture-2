@@ -122,12 +122,4 @@ class Verse
         $this->sessionverses = new ArrayCollection();
     }
     
-    /**
-     * Invoked before the entity is updated.
-     * 
-     * @orm:PreUpdate
-     */
-    public function preUpdate()
-    {
-    }
 }
