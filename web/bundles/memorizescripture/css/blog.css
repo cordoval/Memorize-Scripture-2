@@ -54,7 +54,8 @@ footer p {
 }
 
 footer p.symfony2 {
-    float: left;
+    /*float: left;*/
+    text-align: center;
 }
 
 footer p.copy {
@@ -93,4 +94,23 @@ p.post_body {
  
 ul.post_tags {
     margin-top: 5px;
+}
+
+div.versetext {
+    font-family: CURSIVE;
+    font-size: 1.2em;
+    line-height: 21px;
+    color: #888;
+    padding: 10px;
+}
+
+div.sessiontitle {
+    line-height: 15px;
+    font-size: 1.3em;
+}
+
+div.versenumber {
+    float: right;
+    line-height: 7px;
+    font-size: 0.7em;
 }

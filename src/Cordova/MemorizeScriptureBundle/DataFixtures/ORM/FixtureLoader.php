@@ -145,29 +145,76 @@ class FixtureLoader implements FixtureInterface
 	
         // created a session sample with user john.doe and title test session
         $session = new Session();
-        $session->setTitle('test session');
+        $session->setTitle('My First Session');
         $user->addSession($session);
 
 	    $manager->persist($session);
 
-        // created a sessionverse sample
-        $sessionverse = new SessionVerse();
-        $sessionverse->setRecitedyesno('no');
-        $sessionverse->setRecitedTimes('4');
-        $sessionverse->setActiveDay('1');
-        $sessionverse->setActiveMonth('1');
-        $sessionverse->setActiveWeek('1');
-        $sessionverse->setExtendedRecitedTimes('1');
-        $sessionverse->setRecitedTimes('1');
-        $todaysdate = new \DateTime("now");
-        $sessionverse->setEntryDate($todaysdate);
-        $session->addSessionVerse($sessionverse);
+        // created a sessionverse 1 sample
+        $sessionverse1 = new SessionVerse();
+        $sessionverse1->setRecitedyesno('no');
+        $sessionverse1->setRecitedTimes('4');
+        $sessionverse1->setActiveDay('1');
+        $sessionverse1->setActiveMonth('1');
+        $sessionverse1->setActiveWeek('1');
+        $sessionverse1->setExtendedRecitedTimes('1');
+        $sessionverse1->setRecitedTimes('1');
+        $todaysdate1 = new \DateTime("now");
+        $sessionverse1->setEntryDate($todaysdate1);
+        $session->addSessionVerse($sessionverse1);
 
-        $manager->persist($sessionverse);
+        $manager->persist($sessionverse1);
 
-        
         // set $verse->text == $sessionverse->getInputfromuser
-        $verse->addSessionVerse($sessionverse);
+        $verse1 = new Verse();
+	    $verse1->setVersenum('1');
+        $verse1->setVersetext('In the beginning was the Word, and the Word was with God, and the Word was God.');
+        $manager->persist($verse1);
+        $verse1->addSessionVerse($sessionverse1);
+
+        // created a sessionverse 2 sample
+        $sessionverse2 = new SessionVerse();
+        $sessionverse2->setRecitedyesno('no');
+        $sessionverse2->setRecitedTimes('4');
+        $sessionverse2->setActiveDay('1');
+        $sessionverse2->setActiveMonth('1');
+        $sessionverse2->setActiveWeek('1');
+        $sessionverse2->setExtendedRecitedTimes('1');
+        $sessionverse2->setRecitedTimes('1');
+        $todaysdate2 = new \DateTime("now");
+        $sessionverse2->setEntryDate($todaysdate2);
+        $session->addSessionVerse($sessionverse2);
+
+        $manager->persist($sessionverse2);
+
+        // set $verse->text == $sessionverse->getInputfromuser
+        $verse2 = new Verse();
+	    $verse2->setVersenum('1');
+        $verse2->setVersetext('He was in the beginning with God.');
+        $manager->persist($verse2);
+        $verse2->addSessionVerse($sessionverse2);
+
+        // created a sessionverse 3 sample
+        $sessionverse3 = new SessionVerse();
+        $sessionverse3->setRecitedyesno('no');
+        $sessionverse3->setRecitedTimes('4');
+        $sessionverse3->setActiveDay('1');
+        $sessionverse3->setActiveMonth('1');
+        $sessionverse3->setActiveWeek('1');
+        $sessionverse3->setExtendedRecitedTimes('1');
+        $sessionverse3->setRecitedTimes('1');
+        $todaysdate3 = new \DateTime("now");
+        $sessionverse3->setEntryDate($todaysdate3);
+        $session->addSessionVerse($sessionverse3);
+
+        $manager->persist($sessionverse3);
+
+        // set $verse->text == $sessionverse->getInputfromuser
+        $verse3 = new Verse();
+	    $verse3->setVersenum('1');
+        $verse3->setVersetext('All things were made through him, and without him was not any thing made that was made.');
+        $manager->persist($verse3);
+        $verse3->addSessionVerse($sessionverse3);
 
         $manager->flush();
     }

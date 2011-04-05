@@ -18,10 +18,16 @@
        <ul>
        {% for key, session in user.sessions %}
           <li>
-             Title:  {{ session.title }}
+             <div class="sessiontitle">{{ session.title }}</div>
             <ul>
                 <li>
                     Number of verses: {{ session.sessionverses |length }}
+                    {% for key, sessionverse in session.sessionverses %}
+                    <li>
+                    <div class="versetext">"{{ sessionverse.verse.versetext }}"</div>
+                    <div class="versenumber">{{ sessionverse.verse.versenum }}</div>
+                    </li>
+                    {% endfor %}
                 </li>
             </ul>
           </li>
