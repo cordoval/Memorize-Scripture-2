@@ -25,6 +25,7 @@
                     {% for key, sessionverse in session.sessionverses %}
                     <li>
                     <div class="versetext">"{{ sessionverse.verse.versetext }}"</div>
+                    <div class="button"><a id="ajax_link" href="{{ path( 'show_page' , { 'page' : "about" } ) }}">Click this link</a></div>
                     <div class="versenumber">{{ sessionverse.verse.versenum }}</div>
                     </li>
                     {% endfor %}
