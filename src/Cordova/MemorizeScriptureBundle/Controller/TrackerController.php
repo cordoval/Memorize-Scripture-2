@@ -3,6 +3,7 @@
 namespace Cordova\MemorizeScriptureBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class TrackerController extends Controller
 {
@@ -28,15 +29,14 @@ class TrackerController extends Controller
         return $this->render('MemorizeScripture:Tracker:index.html.twig');
     }
 
-    public function addRecitationAction($punch)
+    public function addRecitationAction($id)
     {
-        /*return $this->render(
-            sprintf( 'MemorizeScripture:Pages:%s.html.twig', $page )
-        );*/
-        // $punch is a parameter passed by the xhr
-
+        // id is going to be the value to get the entity
+        $em = $this->get('doctrine.orm.entity_manager');
+        //$users = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\User')->getLatestUsers()->;
+        
         //so here we take $punch and return it in the array
-        $arr = array("punch" => $punch);
+        $arr = array("id" => $id);
         return new Response(json_encode($arr));
     }
 }
