@@ -20,6 +20,10 @@ MemorizeScripture:
     pattern:  /tracker
     defaults: { _controller: MemorizeScripture:Tracker:index }
 
+MemorizeScripture_addRecitation:
+    pattern:  /tracker/get/{id}.{_format}
+    defaults: { _controller: MemorizeScripture:Tracker:addRecitation }
+
 show_page:
     pattern:  /{page}
     defaults: { _controller: MemorizeScripture:Pages:show }

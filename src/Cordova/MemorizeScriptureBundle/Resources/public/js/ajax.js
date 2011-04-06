@@ -4,13 +4,21 @@ $(document).ready(function() {
 
 
     $("#ajax_link").click(function(e) {
+
+        // stop normal click link
         e.preventDefault();
+
+        // builds the url
         var $url = $(this).attr('href');
+
+        // hard coded now
         $url = "tracker";
 
+        // fetches the resource
         $.get($url, function(data) {
             $('p.post_body').html(data);
         });
+        
     });
 
  });

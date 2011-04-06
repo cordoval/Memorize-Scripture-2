@@ -27,4 +27,16 @@ class TrackerController extends Controller
     {
         return $this->render('MemorizeScripture:Tracker:index.html.twig');
     }
+
+    public function addRecitationAction($punch)
+    {
+        /*return $this->render(
+            sprintf( 'MemorizeScripture:Pages:%s.html.twig', $page )
+        );*/
+        // $punch is a parameter passed by the xhr
+
+        //so here we take $punch and return it in the array
+        $arr = array("punch" => $punch);
+        return new Response(json_encode($arr));
+    }
 }
