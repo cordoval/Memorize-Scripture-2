@@ -3,22 +3,24 @@ $(document).ready(function() {
    // do stuff when DOM is ready
 
 
-    $("#ajax_link").click(function(e) {
+    $(".ajax_link").click(function(e) {
 
         // stop normal click link
         e.preventDefault();
 
         // builds the url
-        var $url = $(this).attr('href');
+        var url = $(this).attr('href');
 
-        // hard coded now
-        $url = "tracker";
+        // hard coded for now
+        //url = "tracker/get/"+id+".json";
+
+        //path('route_name', {slug: 'myslug', id:12})
 
         // fetches the resource
-        $.get($url, function(data) {
-            $('p.post_body').html(data);
+        $.get(url, function(obj) {
+            $('p.post_body').prepend(obj.id);
         });
-        
+        //return false;
     });
 
  });
