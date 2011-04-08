@@ -25,7 +25,7 @@
                     {% for key, sessionverse in session.sessionverses %}
                     <li>
                     <div class="versetext">"{{ sessionverse.verse.versetext }}"</div>
-                    <div class="button"><a class="ajax_link" href="{{ path( 'MemorizeScripture_addRecitation' , { 'id' : sessionverse.Recitedyesno, '_format': "json" } ) }}">Click this link</a></div>
+                    <div class="button"><a class="ajax_link" href="{{ path( 'MemorizeScripture_addRecitation' , { 'id' : sessionverse.id, '_format': "json" } ) }}">Click this link</a></div>
                     <div class="versenumber">{{ sessionverse.verse.versenum }}</div>
                     </li>
                     {% endfor %}

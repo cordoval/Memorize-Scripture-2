@@ -18,7 +18,7 @@ $(document).ready(function() {
 
         // fetches the resource
         $.get(url, function(obj) {
-            $('p.post_body').prepend(obj.id);
+            $('p.post_body').prepend(obj.Recitedyesno);
         });
         //return false;
     });

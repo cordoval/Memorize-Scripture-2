@@ -17,4 +17,16 @@ class SessionVerseRepository extends EntityRepository
  
         return $query->getResult();
     }
+
+    public function getSessionVerseWithId($id)
+    {
+        $limit = 1;
+        $dql = 'SELECT s FROM Cordova\MemorizeScriptureBundle\Entity\SessionVerse s ' .
+               'WHERE s.id='.$id;
+
+        $query = $this->getEntityManager()->createQuery($dql);
+        $query->setMaxResults($limit);
+
+        return $query->getResult();
+    }
 }
