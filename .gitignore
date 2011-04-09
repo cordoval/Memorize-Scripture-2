@@ -4,3 +4,4 @@ app/phpunit.xml
 app/config/parameters.ini
 src/Cordova/MemorizeScriptureBundle/Resources/public/images/*
 web/bundles/memorizescripture/images/*
+.idea/*
