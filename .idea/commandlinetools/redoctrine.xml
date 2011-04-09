@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.xsd" name="redoctrine" invoke="&quot;$PhpExecutable$&quot; &quot;$ProjectFileDir$/app/console&quot; doctrine:schema:drop --force &amp;&amp; &quot;$PhpExecutable$&quot; &quot;$ProjectFileDir$/app/console&quot; doctrine:schema:create &amp;&amp; &quot;$PhpExecutable$&quot; &quot;$ProjectFileDir$/app/console&quot; doctrine:data:load" alias="r" enabled="true" version="1" />
+

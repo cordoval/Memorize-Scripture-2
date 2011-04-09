@@ -33,10 +33,15 @@ class TrackerController extends Controller
     {
         $em = $this->get('doctrine.orm.entity_manager');
 
-        $sessionverse = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getSessionVerseWithId($id);
-
+        $sessionverse = $em->find('Cordova\MemorizeScriptureBundle\Entity\SessionVerse',$id);
         $Recitedyesno = $sessionverse->getRecitedyesno();
-
+        if ($Recitedyesno == 'yes') {
+            $sessionverse->setRecitedyesno('no');
+        } else {
+            $sessionverse->setRecitedyesno('yes');
+        }
+        $Recitedyesno = $sessionverse->getRecitedyesno();
+        $em->flush();
 
         $arr = array(
                 "id" => $id,
