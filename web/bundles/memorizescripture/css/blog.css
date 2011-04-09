@@ -100,9 +100,30 @@ div.versetext {
     font-family: CURSIVE;
     font-size: 1.2em;
     line-height: 21px;
-    color: #888;
     padding: 10px;
 }
+
+div.versetext.yesrecited {
+    color: #DDDDDD;
+}
+
+div.versetext.notrecited {
+    color: #FFFFFFF;
+}
+
+div.buttontooglex {
+    height: 16px;
+    width: 16px;
+}
+
+div.buttontooglex.yread {
+    background-image: url('../images/icons/asterisk_yellow.png');
+}
+
+div.buttontooglex.aread {
+    background-image: url('../images/icons/tick.png');
+}
+
 
 div.sessiontitle {
     line-height: 15px;

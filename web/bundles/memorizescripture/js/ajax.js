@@ -11,17 +11,15 @@ $(document).ready(function() {
         // builds the url
         var url = $(this).attr('href');
 
-        // hard coded for now
-        //url = "tracker/get/"+id+".json";
-
-        //path('route_name', {slug: 'myslug', id:12})
-
         // fetches the resource
         $.get(url, function(obj) {
-            $('p.post_body').prepend(obj.Recitedyesno);
-            $('.verseclass')
+            if(obj.Recitedyesno === 'yes') {
+                $('#lineverse-' + (obj.id-1) + ' .versetext').removeClass('notrecited').addClass('yesrecited');
+            } else {
+                $('#lineverse-' + (obj.id-1) + ' .versetext').removeClass('yesrecited').addClass('notrecited');
+            }
+
         });
-        //return false;
     });
 
  });
