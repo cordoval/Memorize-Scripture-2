@@ -24,7 +24,7 @@
                     {% for key, sessionverse in session.sessionverses %}
                     <li id="lineverse-{{ key }}">
                         <div class="versetext {% if sessionverse.Recitedyesno == 'yes' %} yesrecited {% else %} notrecited {% endif %}">"{{ sessionverse.verse.versetext }}"</div>
-                        <div class="versenumber">{{ sessionverse.verse.versenum }}</div>
+                        <div class="versenumber">{{ sessionverse.verse }}:{{ sessionverse.verse.versenum }}</div>
                         <div class="button"><a class="ajax_link" href="{{ path( 'MemorizeScripture_addRecitation' , { 'id' : sessionverse.id, '_format': "json" } ) }}"><div class="buttontooglex {% if sessionverse.Recitedyesno == 'yes' %} aread {% else %} yread {% endif %}"></div></a></div>
                     </li>
                     {% endfor %}

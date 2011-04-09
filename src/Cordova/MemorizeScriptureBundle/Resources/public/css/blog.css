@@ -101,6 +101,14 @@ div.versetext {
     font-size: 1.2em;
     line-height: 21px;
     padding: 10px;
+    float: left;
+    width: 400px;
+}
+
+div.button {
+    float: left;
+    width: 20px;
+    padding: 10px;
 }
 
 div.versetext.yesrecited {
@@ -131,7 +139,9 @@ div.sessiontitle {
 }
 
 div.versenumber {
-    float: right;
+    float: left;
+    width: 80px;
     line-height: 7px;
     font-size: 0.7em;
+    padding: 10px;
 }

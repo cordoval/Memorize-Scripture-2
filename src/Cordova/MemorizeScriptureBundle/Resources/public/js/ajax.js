@@ -15,9 +15,10 @@ $(document).ready(function() {
         $.get(url, function(obj) {
             if(obj.Recitedyesno === 'yes') {
                 $('#lineverse-' + (obj.id-1) + ' .versetext').removeClass('notrecited').addClass('yesrecited');
-                //$('.buttontoglex')
+                $('#lineverse-' + (obj.id-1) + ' .buttontooglex').removeClass('yread').addClass('aread');
             } else {
                 $('#lineverse-' + (obj.id-1) + ' .versetext').removeClass('yesrecited').addClass('notrecited');
+                $('#lineverse-' + (obj.id-1) + ' .buttontooglex').removeClass('aread').addClass('yread');
             }
 
         });
