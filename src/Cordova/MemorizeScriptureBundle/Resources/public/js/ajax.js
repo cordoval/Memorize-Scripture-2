@@ -16,7 +16,7 @@ $(document).ready(function() {
 
         //path('route_name', {slug: 'myslug', id:12})
 
-        // fetches the resource
+        // fetches the resource now changing ajax
         $.get(url, function(obj) {
             $('p.post_body').prepend(obj.Recitedyesno);
         });
