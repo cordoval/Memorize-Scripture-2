@@ -19,6 +19,7 @@ $(document).ready(function() {
         // fetches the resource
         $.get(url, function(obj) {
             $('p.post_body').prepend(obj.Recitedyesno);
+            $('.verseclass')
         });
         //return false;
     });
