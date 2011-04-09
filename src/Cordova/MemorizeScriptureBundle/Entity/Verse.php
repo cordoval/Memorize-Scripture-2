@@ -28,6 +28,14 @@ class Verse
     private $sessionverses;
 
     /**
+     * @orm:ManyToOne(targetEntity="Chapter", inversedBy="verses")
+     * @orm:JoinColumn(name="chapter_id", referencedColumnName="id")
+     *
+     * @var Chapter $chapter
+     */
+    private $chapter;
+
+    /**
      * @orm:Column(type="text")
      * 
      * @var string $versenum
@@ -53,6 +61,27 @@ class Verse
     {
         $value->setVerse($this);
         $this->sessionverses->add($value);
+    }
+
+    /**
+     * Gets the chapter of the verse.
+     *
+     * @return Chapter verse's chapter
+     */
+    public function getChapter()
+    {
+        return $this->chapter;
+    }
+
+    /**
+     * Sets the chapter for the verse.
+     *
+     * @param Chapter $value The chapter
+     */
+    public function setChapter( $value )
+    {
+        //$value->addVerse($this);
+        $this->chapter = $value;
     }
 
     /**

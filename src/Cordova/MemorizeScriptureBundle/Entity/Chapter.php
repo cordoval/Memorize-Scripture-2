@@ -25,7 +25,64 @@ class Chapter
      * @var string $chapternum
      */
     protected $chapternum;
-      
+
+    /**
+     * @orm:OneToMany(targetEntity="Verse", mappedBy="chapter")
+     * @orm:OrderBy({"createdAt" = "DESC"})
+     *
+     * @var ArrayCollection $verses
+     */
+    protected $verses;
+
+    /**
+     * @orm:ManyToOne(targetEntity="Book", inversedBy="chapters")
+     * @orm:JoinColumn(name="book_id", referencedColumnName="id")
+     *
+     * @var Book $book
+     */
+    private $book;
+
+    /**
+     * Gets the verses of the chapter.
+     *
+     * @return ArrayCollection $verses
+     */
+    public function getVerses()
+    {
+        return $this->verses;
+    }
+
+    /**
+     * Sets the chapter verses.
+     *
+     * @param Verse $value verse
+     */
+    public function addVerse( $value )
+    {
+        $value->setChapter($this);
+        $this->verses->add($value);
+    }
+
+    /**
+     * Gets the book.
+     *
+     * @return Book book
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+
+    /**
+     * Sets the book.
+     *
+     * @param Book $value book
+     */
+    public function setBook( $value )
+    {
+        $this->book = $value;
+    }
+
     /**
      * Gets the id.
      * 
@@ -61,6 +118,7 @@ class Chapter
      */
     public function __construct()
     {
+        $this->verses = new ArrayCollection();
     }
     
     /**

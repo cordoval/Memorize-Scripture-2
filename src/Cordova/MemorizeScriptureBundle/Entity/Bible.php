@@ -26,7 +26,8 @@ class Bible
      * @var string $version
      */
     protected $version;
-      
+
+    
     /**
      * Gets the id.
      * 
