@@ -27,7 +27,35 @@ class Bible
      */
     protected $version;
 
-    
+    /**
+     * @orm:OneToMany(targetEntity="Book", mappedBy="bible")
+     * @orm:OrderBy({"createdAt" = "DESC"})
+     *
+     * @var ArrayCollection $books
+     */
+    protected $books;
+
+    /**
+     * Gets the books of the bible.
+     *
+     * @return ArrayCollection $books
+     */
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
+    /**
+     * Sets the bible books.
+     *
+     * @param Book $value book
+     */
+    public function addBook( $value )
+    {
+        $value->setBible($this);
+        $this->books->add($value);
+    }
+
     /**
      * Gets the id.
      * 

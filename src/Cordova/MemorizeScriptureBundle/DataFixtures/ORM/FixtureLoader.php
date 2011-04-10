@@ -112,6 +112,7 @@ class FixtureLoader implements FixtureInterface
 	    // create a Book
 	    $book = new Book();
 	    $book->setTitle('Genesis');
+        $book->setBible($bible);
 
         $manager->persist($book);
 
@@ -123,7 +124,7 @@ class FixtureLoader implements FixtureInterface
 		    // create each Chapter
 		    $chapter = new Chapter();
 		    $chapter->setChapternum($i);
-
+            $chapter->setBook($book);
 	        $manager->persist($chapter);
 
 		    // now create each verse for corresponding chapter
@@ -137,7 +138,7 @@ class FixtureLoader implements FixtureInterface
 			    $verse = new Verse();
 			    $verse->setVersenum($k);
 			    $verse->setVersetext($versestext[$k-1]);
-
+                $verse->setChapter($chapter);
 		        $manager->persist($verse);
 		    }
 	    }
@@ -168,6 +169,7 @@ class FixtureLoader implements FixtureInterface
         // set $verse->text == $sessionverse->getInputfromuser
         $verse1 = new Verse();
 	    $verse1->setVersenum('1');
+        $verse1->setChapter($chapter);
         $verse1->setVersetext('In the beginning was the Word, and the Word was with God, and the Word was God.');
         $manager->persist($verse1);
         $verse1->addSessionVerse($sessionverse1);
@@ -190,6 +192,7 @@ class FixtureLoader implements FixtureInterface
         // set $verse->text == $sessionverse->getInputfromuser
         $verse2 = new Verse();
 	    $verse2->setVersenum('1');
+        $verse2->setChapter($chapter);
         $verse2->setVersetext('He was in the beginning with God.');
         $manager->persist($verse2);
         $verse2->addSessionVerse($sessionverse2);
@@ -212,6 +215,7 @@ class FixtureLoader implements FixtureInterface
         // set $verse->text == $sessionverse->getInputfromuser
         $verse3 = new Verse();
 	    $verse3->setVersenum('1');
+        $verse3->setChapter($chapter);
         $verse3->setVersetext('All things were made through him, and without him was not any thing made that was made.');
         $manager->persist($verse3);
         $verse3->addSessionVerse($sessionverse3);
