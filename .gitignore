@@ -2,6 +2,7 @@ app/cache/*
 app/logs/*
 app/phpunit.xml
 app/config/parameters.ini
+app/config/deploy.rb
 src/Cordova/MemorizeScriptureBundle/Resources/public/images/*
 web/bundles/memorizescripture/images/*
 .idea/*
