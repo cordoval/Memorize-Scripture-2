@@ -1,4 +1,4 @@
-{% extends "MemorizeScripture::layout.html.twig" %}
+{% extends "MemorizeScriptureBundle::layout.html.twig" %}
 
 {% block title %}
     Memorize Scripture | Home
@@ -9,7 +9,7 @@
     {#% debug users %#}
     <br/>
     {% for user in users %}
-	    {% include 'MemorizeScripture:Tracker:user.html.twig' with { 'user': user } %}
+	    {% include 'MemorizeScriptureBundle:Tracker:user.html.twig' with { 'user': user } %}
 	{% else %}
 	    There are no users loaded 
     {% endfor %}

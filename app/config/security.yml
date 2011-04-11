@@ -1,6 +1,6 @@
 security:
     encoders:
-        Vendor\FirstBundle\Entity\User:
+        Vendor\MemoriScriptureBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
@@ -13,7 +13,7 @@ security:
 
     providers:
         main:
-            entity: { class: MemorizeScripture:User, property: username }
+            entity: { class: MemorizeScriptureBundle:User, property: username }
         in_memory:
             users:
                 user:  { password: userpass, roles: [ 'ROLE_USER' ] }

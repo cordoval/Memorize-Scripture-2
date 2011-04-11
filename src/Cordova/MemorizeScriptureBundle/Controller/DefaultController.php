@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('MemorizeScripture:Default:index.html.twig');
+        return $this->render('MemorizeScriptureBundle:Default:index.html.twig');
     }
 }

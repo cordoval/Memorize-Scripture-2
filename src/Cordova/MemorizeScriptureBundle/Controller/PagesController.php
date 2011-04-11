@@ -11,7 +11,7 @@ class PagesController extends Controller
     public function showAction($page)
     {
         return $this->render(
-            sprintf( 'MemorizeScripture:Pages:%s.html.twig', $page )
+            sprintf( 'MemorizeScriptureBundle:Pages:%s.html.twig', $page )
         );
     }
 }

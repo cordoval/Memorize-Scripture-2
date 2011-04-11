@@ -50,7 +50,7 @@ doctrine:
            default:
                connection: default
                mappings:
-                   MemorizeScripture: ~
+                   MemorizeScriptureBundle: ~
 
 
 ## Swiftmailer Configuration

@@ -14,7 +14,7 @@ class BlogController extends Controller
 	$posts = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\Post')->getLatestPosts();
         //return $this->render('VendorFirst:Blog:index.html.twig');
 	return $this->render(
-		'MemorizeScripture:Blog:index.html.twig',
+		'MemorizeScriptureBundle:Blog:index.html.twig',
 		array(
 			'posts' => $posts
 		)

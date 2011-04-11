@@ -10,6 +10,6 @@ class SessionController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('MemorizeScripture:Session:index.html.twig');
+        return $this->render('MemorizeScriptureBundle:Session:index.html.twig');
     }
 }

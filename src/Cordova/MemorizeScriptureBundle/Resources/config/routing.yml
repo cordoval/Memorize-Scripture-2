@@ -1,6 +1,6 @@
 _security_login:
     pattern: /login
-    defaults: { _controller: MemorizeScripture:Security:login }
+    defaults: { _controller: MemorizeScriptureBundle:Security:login }
 
 _security_check:
     pattern: /login_check
@@ -10,27 +10,27 @@ _security_logout:
 
 admin_home:
     pattern: /admin/
-    defaults: { _controller: MemorizeScripture:Admin:index }
+    defaults: { _controller: MemorizeScriptureBundle:Admin:index }
 
 sessions_page:
     pattern:  /session
-    defaults: { _controller: MemorizeScripture:Session:index }
+    defaults: { _controller: MemorizeScriptureBundle:Session:index }
 
 MemorizeScripture:
     pattern:  /tracker
-    defaults: { _controller: MemorizeScripture:Tracker:index }
+    defaults: { _controller: MemorizeScriptureBundle:Tracker:index }
 
 MemorizeScripture_addRecitation:
     pattern:  /tracker/get/{id}.{_format}
-    defaults: { _controller: MemorizeScripture:Tracker:addRecitation }
+    defaults: { _controller: MemorizeScriptureBundle:Tracker:addRecitation }
 
 show_page:
     pattern:  /{page}
-    defaults: { _controller: MemorizeScripture:Pages:show }
+    defaults: { _controller: MemorizeScriptureBundle:Pages:show }
 
 homepage:
     pattern:  /
-    defaults: { _controller: MemorizeScripture:Blog:index }
+    defaults: { _controller: MemorizeScriptureBundle:Blog:index }
 
 #homepage:
 #    pattern:  /

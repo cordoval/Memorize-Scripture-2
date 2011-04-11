@@ -16,7 +16,7 @@ class TrackerController extends Controller
 	    //$sessionverses = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getLatestSessionVerses();
 
 	    return $this->render(
-		    'MemorizeScripture:Tracker:index.html.twig',
+		    'MemorizeScriptureBundle:Tracker:index.html.twig',
 		        array(
                     'users' => $users,
                     //'sessionverses' => $sessionverses;
@@ -26,7 +26,7 @@ class TrackerController extends Controller
     
     public function welcomeAction()
     {
-        return $this->render('MemorizeScripture:Tracker:index.html.twig');
+        return $this->render('MemorizeScriptureBundle:Tracker:index.html.twig');
     }
 
     public function addRecitationAction($id)

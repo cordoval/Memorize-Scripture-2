@@ -10,6 +10,6 @@ class AdminController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('MemorizeScripture:Admin:index.html.twig');
+        return $this->render('MemorizeScriptureBundle:Admin:index.html.twig');
     }
 }

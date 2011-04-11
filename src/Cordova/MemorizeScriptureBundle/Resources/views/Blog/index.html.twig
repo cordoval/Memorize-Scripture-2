@@ -1,4 +1,4 @@
-{% extends "MemorizeScripture::layout.html.twig" %}
+{% extends "MemorizeScriptureBundle::layout.html.twig" %}
  
 {% block title %}
     Memorize Scripture | Home
@@ -7,6 +7,6 @@
 {% block content %}
     <h2>Welcome! Ready to memorize Scripture? Let's go!</h2>
     {% for post in posts %}
-	{% include 'MemorizeScripture:Blog:post.html.twig' with { 'post': post } %}
+	{% include 'MemorizeScriptureBundle:Blog:post.html.twig' with { 'post': post } %}
     {% endfor %}
 {% endblock %}
