@@ -7,3 +7,5 @@ src/Cordova/MemorizeScriptureBundle/Resources/public/images/*
 web/bundles/memorizescripture/images/*
 .idea/*
 .idea/.name
+Capfile
+.rsync_cache/*
