@@ -9,3 +9,5 @@ web/bundles/memorizescripture/images/*
 .idea/.name
 Capfile
 .rsync_cache/*
+.rsync_cache/
+.rsync_cache
