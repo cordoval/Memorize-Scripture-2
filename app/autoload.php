@@ -12,7 +12,8 @@ $loader->registerNamespaces(array(
     'Doctrine\\DBAL'                   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'                         => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                          => __DIR__.'/../vendor/assetic/src',
-    'Zend\\Log'                        => __DIR__.'/../vendor/zend-log',
+    'Monolog'         		       => __DIR__.'/../vendor/monolog/src',
+    // there was a zend line here got removed
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_'   => __DIR__.'/../vendor/twig-extensions/lib',

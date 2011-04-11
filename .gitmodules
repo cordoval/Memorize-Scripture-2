@@ -1,9 +1,12 @@
 [submodule "vendor/symfony"]
 	path = vendor/symfony
 	url = git://github.com/symfony/symfony.git
-[submodule "vendor/zend-log/Zend/Log"]
-	path = vendor/zend-log/Zend/Log
-	url = git://github.com/symfony/zend-log.git
+#[submodule "vendor/zend-log/Zend/Log"]
+#	path = vendor/zend-log/Zend/Log
+#	url = git://github.com/symfony/zend-log.git
+[submodule "vendor/monolog"]
+	path = vendor/monolog
+	url = git://github.com/Seldaek/monolog.git
 [submodule "vendor/swiftmailer"]
 	path = vendor/swiftmailer
 	url = git://github.com/swiftmailer/swiftmailer.git
