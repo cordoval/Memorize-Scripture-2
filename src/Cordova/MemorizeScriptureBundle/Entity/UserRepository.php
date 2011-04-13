@@ -12,6 +12,7 @@ class UserRepository extends EntityRepository
         $dql = 'SELECT u FROM Cordova\MemorizeScriptureBundle\Entity\User u ' .
                //'INNER JOIN u.verse s ' .
                'ORDER BY u.createdAt DESC';
+        $dql = mysql_escape_string($dql);
  
         $query = $this->getEntityManager()->createQuery($dql);
         $query->setMaxResults($limit);
