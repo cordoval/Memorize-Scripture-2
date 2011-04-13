@@ -10,7 +10,7 @@ class AppKernel extends Kernel
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),		// added here but maybe it is not found
-	    new Symfony\Bundle\MonologBundle\MonologBundle(),
+	        new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
             //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),  // added here but maybe it is not found
             //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),  // added here but maybe it is not found
+            new FOS\UserBundle\FOSUserBundle(),
             new Cordova\MemorizeScriptureBundle\MemorizeScriptureBundle(),
         );
 

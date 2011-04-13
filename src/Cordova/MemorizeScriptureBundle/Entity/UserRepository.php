@@ -1,7 +1,8 @@
 <?php
 
 namespace Cordova\MemorizeScriptureBundle\Entity;
- 
+use FOS\UserBundle\Entity\User as BaseUser;
+
 use Doctrine\ORM\EntityRepository;
  
 class UserRepository extends EntityRepository

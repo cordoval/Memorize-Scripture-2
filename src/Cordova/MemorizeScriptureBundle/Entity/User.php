@@ -4,12 +4,13 @@ namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
  * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository")
  * @orm:Table(name="user")
  */
-class User implements UserInterface
+class User extends BaseUser
 {
     /**
      * @orm:Id

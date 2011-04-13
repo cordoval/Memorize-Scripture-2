@@ -1,6 +1,6 @@
 security:
     encoders:
-        Vendor\MemoriScriptureBundle\Entity\User:
+        Cordova\MemorizeScriptureBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 10
@@ -12,22 +12,26 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        main:
-            entity: { class: MemorizeScriptureBundle:User, property: username }
-        in_memory:
-            users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#        main:
+#            entity: { class: MemorizeScriptureBundle:User, property: username }
+#        in_memory:
+#            users:
+#                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        fos_userbundle:
+            id: fos_user.user_manager
 
     firewalls:
         main:
             pattern: /.*
             form_login:
-                check_path: /login_check
-                login_path: /login
-            logout: true
-            security: true
-            anonymous: true
+#                check_path: /login_check
+#                login_path: /login
+#            logout: true
+#            security: true
+#            anonymous: true
+                 provider: fos_userbundle
+        
         profiler:
             pattern:  ^/_profiler
             security: false
@@ -58,4 +62,9 @@ security:
         - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
 
-
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    class:
+        model:
+            user: Cordova\MemorizeScriptureBundle\Entity\User:
