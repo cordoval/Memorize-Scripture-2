@@ -23,15 +23,13 @@ class User extends BaseUser
     protected $id;
     
     /**
-     * @orm:Column(type="string", length="255", name="first_name")
-     * 
+     * @orm:Column(type="string", length="255", name="first_name", nullable=true)
      * @var string $firstName
      */
     protected $firstName;
     
     /**
-     * @orm:Column(type="string", length="255", name="last_name")
-     * 
+     * @orm:Column(type="string", length="255", name="last_name",nullable=true)
      * @var string $lastName
      */
     protected $lastName;
@@ -131,6 +129,7 @@ class User extends BaseUser
         $this->posts = new ArrayCollection();
         $this->sessions = new ArrayCollection();
         //$this->createdAt = new \DateTime();
+        parent::__construct();
     }
 
     /**
