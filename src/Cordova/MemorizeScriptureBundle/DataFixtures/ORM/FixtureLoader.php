@@ -3,31 +3,34 @@
 namespace Cordova\MemorizeScriptureBundle\DataFixtures\ORM;
  
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Symfony\Component\DependencyInjection\ContainerAware;
 use Cordova\MemorizeScriptureBundle\Entity\Category;
 use Cordova\MemorizeScriptureBundle\Entity\Post;
 use Cordova\MemorizeScriptureBundle\Entity\Tag;
 use Cordova\MemorizeScriptureBundle\Entity\User;
 use Cordova\MemorizeScriptureBundle\Entity\Session;
-use Cordova\MemorizeScriptureBundle\Entity\Role;
+//use Cordova\MemorizeScriptureBundle\Entity\Role;
 use Cordova\MemorizeScriptureBundle\Entity\Bible;
 use Cordova\MemorizeScriptureBundle\Entity\Book;
 use Cordova\MemorizeScriptureBundle\Entity\Chapter;
 use Cordova\MemorizeScriptureBundle\Entity\Verse;
 use Cordova\MemorizeScriptureBundle\Entity\SessionVerse;
 use Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
+use FOS\UserBundle\Entity\UserManager;
+
 
 include(__DIR__ . '/../../Scrap/scrap.php');
-
-class FixtureLoader implements FixtureInterface
+//implement ContainerAwareInterface
+class FixtureLoader extends ContainerAware implements FixtureInterface
 {
     public function load($manager)
     {
 
     	// create the ROLE_ADMIN role
-    	$role = new Role();
-	    $role->setName('ROLE_ADMIN');
+    	//$role = new Role();
+	    //$role->setName('ROLE_ADMIN');
 
-	    $manager->persist($role);
+	    //$manager->persist($role);
 
         // create a user
         $user = new User();
@@ -35,7 +38,7 @@ class FixtureLoader implements FixtureInterface
         $user->setLastName('Doe');
         $user->setEmail('john@example.com');
 	    $user->setUsername('john.doe');
-	    $user->setSalt(md5(time()));
+	    //$user->setSalt(md5(time()));
 
 	    // encode and set the password for the user,
 	    // these settings match our config
@@ -43,7 +46,7 @@ class FixtureLoader implements FixtureInterface
 	    $password = $encoder->encodePassword('admin', $user->getSalt());
 	    $user->setPassword($password);
 	
-	    $user->getUserRoles()->add($role);
+	    //$user->getUserRoles()->add($role);
  
         $manager->persist($user);
  
@@ -93,7 +96,9 @@ class FixtureLoader implements FixtureInterface
  
             $manager->persist($post);
         }
- 
+
+        $userManager = $container->get('fos_user.user_manager');
+        $user = $userManager->createUser();
 	    /*
 	    $info contains all genesis so every chapter and every verse within that chapter
 	    for now we will just add to database and hard code the version of the Bible, and

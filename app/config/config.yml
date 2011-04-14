@@ -78,3 +78,50 @@ swiftmailer:
 #    secure_controllers:  true
 #    secure_all_services: false
 
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    class:
+        model:
+            user: Cordova\MemorizeScriptureBundle\Entity\User
+#        form:
+#            user: ~
+#            change_password: ~
+#            reset_password: ~
+#        controller:
+#            user: ~
+#            security: ~
+#        util:
+#            email_canonicalizer: ~
+#            username_canonicalizer: ~
+#    service:
+#        util:
+#            mailer: ~
+    encoder:
+        algorithm: sha512
+        encode_as_base64: true
+        iterations: 5
+#    form_name:
+#        user: ~
+#        change_password: ~
+#        reset_password: ~
+#    form_validation_groups:
+#        user: ~
+#    email:
+#        from_email: ~
+#        confirmation:
+#            enabled: ~
+#            template: ~
+#        resetting_password:
+#            template: ~
+#            token_ttl: ~
+#    template:
+#        engine: ~
+#        theme: ~
+#    group:
+#        class:
+#            model: ~
+#            controller: ~
+#            form: ~
+#        form_name: ~
+#        form_validation_groups: ~

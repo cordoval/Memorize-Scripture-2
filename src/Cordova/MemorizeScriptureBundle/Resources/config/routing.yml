@@ -1,20 +1,27 @@
-_security_login:
-    pattern: /login
-    defaults: { _controller: MemorizeScriptureBundle:Security:login }
+fos_user_security:
+    resource: @FOSUserBundle/Resources/config/routing/security.xml
 
-_security_check:
-    pattern: /login_check
+fos_user_user:
+    resource: @FOSUserBundle/Resources/config/routing/user.xml
+    prefix: /user
 
-_security_logout:
-    pattern: /logout
+#_security_login:
+#    pattern: /login
+#    defaults: { _controller: MemorizeScriptureBundle:Security:login }
 
-admin_home:
-    pattern: /admin/
-    defaults: { _controller: MemorizeScriptureBundle:Admin:index }
+#_security_check:
+#    pattern: /login_check
 
-sessions_page:
-    pattern:  /session
-    defaults: { _controller: MemorizeScriptureBundle:Session:index }
+#_security_logout:
+#    pattern: /logout
+
+#admin_home:
+#    pattern: /admin/
+#    defaults: { _controller: MemorizeScriptureBundle:Admin:index }
+
+#sessions_page:
+#    pattern:  /session
+#    defaults: { _controller: MemorizeScriptureBundle:Session:index }
 
 MemorizeScripture:
     pattern:  /tracker
