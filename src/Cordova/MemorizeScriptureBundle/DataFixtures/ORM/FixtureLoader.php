@@ -9,7 +9,6 @@ use Cordova\MemorizeScriptureBundle\Entity\Post;
 use Cordova\MemorizeScriptureBundle\Entity\Tag;
 use Cordova\MemorizeScriptureBundle\Entity\User;
 use Cordova\MemorizeScriptureBundle\Entity\Session;
-//use Cordova\MemorizeScriptureBundle\Entity\Role;
 use Cordova\MemorizeScriptureBundle\Entity\Bible;
 use Cordova\MemorizeScriptureBundle\Entity\Book;
 use Cordova\MemorizeScriptureBundle\Entity\Chapter;
