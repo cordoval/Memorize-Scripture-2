@@ -19,9 +19,6 @@
 [submodule "vendor/twig-extensions"]
 	path = vendor/twig-extensions
 	url = git://github.com/fabpot/Twig-extensions.git
-[submodule "vendor/doctrine"]
-	path = vendor/doctrine
-	url = git://github.com/doctrine/doctrine2.git
 [submodule "vendor/doctrine-dbal"]
 	path = vendor/doctrine-dbal
 	url = git://github.com/doctrine/dbal.git
@@ -49,3 +46,6 @@
 [submodule "src/Knplabs/Bundle/MenuBundle"]
 	path = src/Knplabs/Bundle/MenuBundle
 	url = git@github.com:sonata-project/MenuBundle.git
+[submodule "vendor/doctrine"]
+	path = vendor/doctrine
+	url = git://github.com/doctrine/doctrine2.git
