@@ -6,6 +6,8 @@ This is my first project
 
 ###5. Current task:
 
+    - now we are integrating adminbundle we are trying to read rst files
+    - a lot of time has elapsed
 	- now trying to get the twig template to display sample SessionVerses entries
 	- just tested phpstorm for 30 days started today 1 April
 	- fixed template for Tracker controller
