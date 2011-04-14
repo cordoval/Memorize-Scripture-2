@@ -20,7 +20,6 @@ use FOS\UserBundle\Entity\UserManager;
 
 
 include(__DIR__ . '/../../Scrap/scrap.php');
-//implement ContainerAwareInterface
 class FixtureLoader extends ContainerAware implements FixtureInterface
 {
     public function load($manager)
