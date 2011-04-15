@@ -21,7 +21,7 @@ use FOS\UserBundle\Entity\UserManager;
 include(__DIR__ . '/../../Scrap/scrap.php');
 class FixtureLoader extends ContainerAware implements FixtureInterface
 {
-    public function load($manager, $container)
+    public function load($manager)
     {
 
     	// create the ROLE_ADMIN role
@@ -95,8 +95,14 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
             $manager->persist($post);
         }
 
-        $userManager = $container->get('fos_user.user_manager');
+        $userManager = $this->container->get('fos_user.user_manager');
         $user = $userManager->createUser();
+        $user->setEmail('cordoval@gmail.com');
+        $user->setUsername('cordoval');
+        $user->setPassword('password');
+        $userManager->updateUser($user, false);
+
+
 	    /*
 	    $info contains all genesis so every chapter and every verse within that chapter
 	    for now we will just add to database and hard code the version of the Bible, and
