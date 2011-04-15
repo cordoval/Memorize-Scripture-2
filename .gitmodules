@@ -43,9 +43,9 @@
 [submodule "src/Sonata/AdminBundle"]
 	path = src/Sonata/AdminBundle
 	url = git@github.com:sonata-project/AdminBundle.git
-[submodule "src/Knplabs/Bundle/MenuBundle"]
-	path = src/Knplabs/Bundle/MenuBundle
-	url = git@github.com:sonata-project/MenuBundle.git
 [submodule "vendor/doctrine"]
 	path = vendor/doctrine
 	url = git://github.com/doctrine/doctrine2.git
+[submodule "src/Knplabs/Bundle/MenuBundle"]
+	path = src/Knplabs/Bundle/MenuBundle
+	url = git://github.com/knplabs/MenuBundle.git

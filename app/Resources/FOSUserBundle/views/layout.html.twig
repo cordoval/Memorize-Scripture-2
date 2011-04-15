@@ -1,0 +1,66 @@
+{% extends "::base.html.twig" %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/memorizescripture/css/blog.css') }}" media="screen" />
+{% endblock %}
+
+{% block body %}
+   <div id="container">
+        <header class="clearfix">
+            <h1>
+                Memorize Scripture
+            </h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ path('show_page', { 'page' : 'about' }) }}">
+                            About
+                        </a>
+                    </li>
+		    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		    <li>
+			<a href="{{ path('_security_logout') }}">
+				Logout
+			</a>
+		    </li>
+		    {% endif %}
+                </ul>
+            </nav>
+        </header>
+	<div class="clearfix">
+	        <div id="content">
+	        <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <a href="{{ path('fos_user_user_show', {'username': app.user.getUsername}) }}">
+                    {% trans 'Logged in as %username%' with { '%username%': app.user.getUsername() } from 'FOSUserBundle' %}
+                </a> |
+                <a href="{{ path('_security_logout') }}">
+                    {% trans 'Logout' from 'FOSUserBundle' %}
+                </a>
+            {% else %}
+                <a href="{{ path('_security_login') }}">{% trans 'Login' from 'FOSUserBundle' %}</a> |
+                <a href="{{ path('fos_user_user_new') }}">{% trans 'Register' from 'FOSUserBundle' %}</a>
+            {% endif %}
+        </div>
+
+        {% for key, flash in app.session.getFlashes() %}
+        <div class="{{ flash }}">
+            {% trans key from 'FOSUserBundle' %}
+        </div>
+        {% endfor %}
+        	    {% block content %}No content.{% endblock %}
+	        </div>
+		<div id="sidebar">
+			{% block sidebar %}{% endblock %}
+		</div>
+	</div>
+        <footer class="clearfix">
+            <p class="symfony2">
+                Powered by the Gospel of Jesus Christ.
+            </p>
+            {#<p class="copy">
+            </p>#}
+        </footer>
+    </div>
+{% endblock %}
+

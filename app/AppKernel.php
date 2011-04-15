@@ -16,12 +16,10 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
-            //new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),  // added here but maybe it is not found
-            //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),  // added here but maybe it is not found
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+            //new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+            //new Sonata\jQueryBundle\SonatajQueryBundle(),
+            //new Sonata\BluePrintBundle\SonataBluePrintBundle(),
+            //new Sonata\AdminBundle\SonataAdminBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Cordova\MemorizeScriptureBundle\MemorizeScriptureBundle(),
         );
