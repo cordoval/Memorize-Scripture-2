@@ -32,7 +32,8 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $user->setLastName('Cordova');
         $user->setEmail('cordoval@gmail.com');
         $user->setUsername('cordoval');
-        $user->setPassword('password');
+        $user->setPlainPassword('password');
+        $user->setEnabled(true);
         $userManager->updateUser($user, false);
 
         // create the tags
