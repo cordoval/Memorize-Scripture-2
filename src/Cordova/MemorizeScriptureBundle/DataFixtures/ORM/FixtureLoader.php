@@ -24,30 +24,17 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
     public function load($manager)
     {
 
-    	// create the ROLE_ADMIN role
-    	//$role = new Role();
-	    //$role->setName('ROLE_ADMIN');
-
-	    //$manager->persist($role);
-
         // create a user
         $user = new User();
-        $user->setFirstName('John');
-        $user->setLastName('Doe');
-        $user->setEmail('john@example.com');
-	    $user->setUsername('john.doe');
-	    //$user->setSalt(md5(time()));
+        $userManager = $this->container->get('fos_user.user_manager');
+        $user = $userManager->createUser();
+        $user->setFirstName('Luis');
+        $user->setLastName('Cordova');
+        $user->setEmail('cordoval@gmail.com');
+        $user->setUsername('cordoval');
+        $user->setPassword('password');
+        $userManager->updateUser($user, false);
 
-	    // encode and set the password for the user,
-	    // these settings match our config
-	    $encoder = new MessageDigestPasswordEncoder('sha512', true, 10);
-	    $password = $encoder->encodePassword('admin', $user->getSalt());
-	    $user->setPassword($password);
-	
-	    //$user->getUserRoles()->add($role);
- 
-        $manager->persist($user);
- 
         // create the tags
         $tag1 = new Tag();
         $tag1->setName('lorem');
@@ -94,14 +81,6 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
  
             $manager->persist($post);
         }
-
-        $userManager = $this->container->get('fos_user.user_manager');
-        $user = $userManager->createUser();
-        $user->setEmail('cordoval@gmail.com');
-        $user->setUsername('cordoval');
-        $user->setPassword('password');
-        $userManager->updateUser($user, false);
-
 
 	    /*
 	    $info contains all genesis so every chapter and every verse within that chapter
