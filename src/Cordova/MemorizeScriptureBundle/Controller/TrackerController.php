@@ -62,6 +62,7 @@ class TrackerController extends Controller
 	    $em->persist($session);
         //$user->userUpdate();
         // do I have to update the user object again here ?
+        
 
         return $this->render(
 		    'MemorizeScriptureBundle:Tracker:index.html.twig',
