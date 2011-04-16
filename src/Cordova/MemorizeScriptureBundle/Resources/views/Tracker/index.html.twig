@@ -8,9 +8,9 @@
     <h2>Dashboard</h2>
     {#% debug users %#}
     <br/>
-    {% for user in users %}
+    {#% for user in users %#}
 	    {% include 'MemorizeScriptureBundle:Tracker:user.html.twig' with { 'user': user } %}
-	{% else %}
-	    There are no users loaded 
-    {% endfor %}
+	{#% else %#}
+	    <!--There are no users loaded-->
+    {#% endfor %#}
 {% endblock %}

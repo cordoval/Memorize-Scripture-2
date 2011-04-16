@@ -10,15 +10,17 @@ class TrackerController extends Controller
     public function indexAction()
     {
         //return $this->render('MemorizeScripture:Tracker:index.html.twig');
-	    $em = $this->get('doctrine.orm.entity_manager');
-        $users = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\User')->getLatestUsers();
+	    //$em = $this->get('doctrine.orm.entity_manager');
+        //$user = $em->('Cordova\MemorizeScriptureBundle\Entity\User')->findBy();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        //->getLatestUsers();
         //$session = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\Session')->getLatestSession();
 	    //$sessionverses = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getLatestSessionVerses();
 
 	    return $this->render(
 		    'MemorizeScriptureBundle:Tracker:index.html.twig',
 		        array(
-                    'users' => $users,
+                    'user' => $user,
                     //'sessionverses' => $sessionverses;
 		        )
 	    );
