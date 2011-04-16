@@ -31,7 +31,7 @@ class TrackerControllerTest extends WebTestCase
         
         var_dump($client->getResponse()->getContent());
         
-        //$this->assertTrue($client->getResponse()->getStatusCode() == '200' );
+        $this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 
         $this->assertTrue($crawler->filter('title:contains("Memorize Scripture | Home")')->count() > 0);
 
