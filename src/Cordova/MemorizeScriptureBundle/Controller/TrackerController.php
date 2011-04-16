@@ -7,30 +7,26 @@ use Symfony\Component\HttpFoundation\Response;
 
 class TrackerController extends Controller
 {
+    /* displays user dashboard */
     public function indexAction()
     {
-        //return $this->render('MemorizeScripture:Tracker:index.html.twig');
-	    //$em = $this->get('doctrine.orm.entity_manager');
-        //$user = $em->('Cordova\MemorizeScriptureBundle\Entity\User')->findBy();
         $user = $this->container->get('security.context')->getToken()->getUser();
-        //->getLatestUsers();
-        //$session = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\Session')->getLatestSession();
-	    //$sessionverses = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getLatestSessionVerses();
 
 	    return $this->render(
 		    'MemorizeScriptureBundle:Tracker:index.html.twig',
 		        array(
                     'user' => $user,
-                    //'sessionverses' => $sessionverses;
 		        )
 	    );
     }
-    
+
+
     public function welcomeAction()
     {
         return $this->render('MemorizeScriptureBundle:Tracker:index.html.twig');
     }
 
+    /* ajax function to toogle recited yes or no */
     public function addRecitationAction($id)
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -51,5 +47,27 @@ class TrackerController extends Controller
                 "someother" => "luis"
         );
         return new Response(json_encode($arr));
+    }
+
+    /* create new session for current user */
+    public function createSessionAction($title = 'sample')
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $session = new Session();
+        $session->setTitle($title);
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $user->addSession($session);
+
+	    $em->persist($session);
+        //$user->userUpdate();
+        // do I have to update the user object again here ?
+
+        return $this->render(
+		    'MemorizeScriptureBundle:Tracker:index.html.twig',
+		        array(
+                    'user' => $user,
+		        )
+	    );
     }
 }
