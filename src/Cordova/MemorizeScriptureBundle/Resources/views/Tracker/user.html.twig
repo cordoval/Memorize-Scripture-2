@@ -19,7 +19,7 @@
        {% for key, session in user.sessions %}
           <li>
              <div class="sessiontitle">{{ session.title }}</div>
-             Number of verses: {{ session.sessionverses |length }}
+             Number of verses: {{ session.sessionverses | length }}
                 <ul>
                     {% for key, sessionverse in session.sessionverses %}
                     <li id="lineverse-{{ key }}">
