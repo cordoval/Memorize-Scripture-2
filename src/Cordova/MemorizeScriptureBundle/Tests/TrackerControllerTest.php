@@ -28,6 +28,7 @@ class TrackerControllerTest extends WebTestCase
         $this->assertTrue($crawler->filter('title:contains("Memorize Scripture | Home")')->count() > 0);
 
         $this->assertRegExp('/Dashboard/', $client->getResponse()->getContent());
+
         //$this->assertTrue($crawler->filter('h2')->count() > 0);
         //$client->getResponse()->getContent()
  
