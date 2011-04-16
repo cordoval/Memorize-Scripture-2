@@ -50,7 +50,7 @@ class TrackerController extends Controller
         return new Response(json_encode($arr));
     }
 
-    /* create new session for current user */
+    /* create new session for current user with a given $title as title */
     public function createSessionAction($title = 'sample')
     {
         $em = $this->get('doctrine.orm.entity_manager');
@@ -58,9 +58,12 @@ class TrackerController extends Controller
         $session->setTitle($title);
 
         $user = $this->container->get('security.context')->getToken()->getUser();
+        
+        $session->setActive();
+        
         $user->addSession($session);
 
-	    $em->persist($session);
+	$em->persist($session);
 
         $em->flush();
 

@@ -6,6 +6,8 @@ app/config/parameters.ini-dist
 app/config/deploy.rb
 src/Cordova/MemorizeScriptureBundle/Resources/public/images/*
 web/bundles/memorizescripture/images/*
+nbproject
+nbproject/*
 .idea/*
 .idea/.name
 Capfile
