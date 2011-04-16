@@ -49,6 +49,12 @@ class User extends BaseUser
      * @var ArrayCollection $sessions
      */
     protected $sessions;
+
+    /**
+     * @orm:Column(type="string", length="255", name="activesessionid", nullable=true)
+     * @var string $activesessionid
+     */
+    protected $activesessionid;
     
     /**
      * Gets the id.
@@ -132,6 +138,10 @@ class User extends BaseUser
         parent::__construct();
     }
 
+    function setActiveSession($id) {
+        $this->activesessionid = $id;
+    }
+    
     /**
      * Gets the full name of the user.
      * 

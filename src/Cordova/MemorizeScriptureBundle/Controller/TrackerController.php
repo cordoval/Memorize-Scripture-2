@@ -59,6 +59,7 @@ class TrackerController extends Controller
 
         $user = $this->container->get('security.context')->getToken()->getUser();
         
+        // sets the session 
         $session->setActive();
         
         $user->addSession($session);

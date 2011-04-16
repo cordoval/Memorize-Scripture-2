@@ -2,6 +2,8 @@
 
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
+use Cordova\MemorizeScriptureBundle\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -148,7 +150,18 @@ class Session
     {
         $this->user = $value;
     }
-       
+
+    /**
+     * Set the session's sessionverses
+     *
+     * @param SessionVerse $value The sessionverse.
+     */
+    public function setActive()
+    {
+        $user = $this->getUser();
+        $user->setActiveSession($this->$id);
+    }
+
     /**
      * Constructs a new instance of Session.
      */
