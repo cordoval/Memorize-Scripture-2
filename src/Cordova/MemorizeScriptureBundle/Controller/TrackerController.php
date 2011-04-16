@@ -4,6 +4,7 @@ namespace Cordova\MemorizeScriptureBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Cordova\MemorizeScriptureBundle\Entity\Session;
 
 class TrackerController extends Controller
 {
@@ -60,15 +61,12 @@ class TrackerController extends Controller
         $user->addSession($session);
 
 	    $em->persist($session);
-        //$user->userUpdate();
-        // do I have to update the user object again here ?
-        
 
-        return $this->render(
-		    'MemorizeScriptureBundle:Tracker:index.html.twig',
-		        array(
-                    'user' => $user,
-		        )
-	    );
+        $em->flush();
+
+        $arr = array(
+                "newsessiontitle" => "$title"
+        );
+        return new Response(json_encode($arr));
     }
 }
