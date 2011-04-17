@@ -2,8 +2,6 @@
 
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
-use Cordova\MemorizeScriptureBundle\Entity;
-
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -159,7 +157,7 @@ class Session
     public function setActive()
     {
         $user = $this->getUser();
-        $user->setActiveSession($this->$id);
+        $user->setActiveSession($this->id);
     }
 
     /**
