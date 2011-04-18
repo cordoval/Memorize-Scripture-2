@@ -4,7 +4,7 @@ namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 //use Symfony\Component\Security\Core\User\UserInterface; 
-//(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository")
+//(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository") 
 use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
