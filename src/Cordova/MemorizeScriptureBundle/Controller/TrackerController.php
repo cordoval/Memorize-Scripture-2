@@ -11,13 +11,14 @@ class TrackerController extends Controller
     /* displays user dashboard */
     public function indexAction()
     {
-        $user = $this->container->get('security.context')->getToken()->getUser();
+        //$user = $this->container->get('security.context')->getToken()->getUser();
 
 	    return $this->render(
-		    'MemorizeScriptureBundle:Tracker:index.html.twig',
-		        array(
-                    'user' => $user,
-		        )
+		    'MemorizeScriptureBundle:Tracker:index.html.twig'
+                    //,
+	//	        array(
+        //           'user' => $user,
+	//	        )
 	    );
     }
 
@@ -61,7 +62,7 @@ class TrackerController extends Controller
              
         $user->addSession($session);
         
-        // sets the session 
+        // sets the session active on user object 
         $session->setActive();
 
 	$em->persist($session);
@@ -72,5 +73,22 @@ class TrackerController extends Controller
                 "newsessiontitle" => "$title"
         );
         return new Response(json_encode($arr));
+    }
+    
+    function makeSessionActiveAction($id) {
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        
+        // uses id to set the session active belonging to that id active on user
+        $user->setActiveSession($id);
+        
+        $arr = array(
+                "newsessiontitle" => "$title"
+        );
+        return new Response(json_encode($arr));
+    }
+    
+    public function nameAction() {
+        
     }
 }

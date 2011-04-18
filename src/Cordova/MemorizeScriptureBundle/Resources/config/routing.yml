@@ -25,7 +25,11 @@ MemorizeScripture_addRecitation:
 MemorizeScripture_createSession:
     pattern:  /tracker/createsession
     defaults: { _controller: MemorizeScriptureBundle:Tracker:createSession }
-
+  
+MemorizeScripture_makeSessionActive:
+    pattern:  /tracker/makesessionactive/{id}
+    defaults: { _controller: MemorizeScriptureBundle:Tracker:makeSessionActive }
+    
 show_page:
     pattern:  /{page}
     defaults: { _controller: MemorizeScriptureBundle:Pages:show }

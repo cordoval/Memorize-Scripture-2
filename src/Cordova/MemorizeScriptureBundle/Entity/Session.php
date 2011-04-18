@@ -93,7 +93,7 @@ class Session
      *
      * @param SessionVerse $value The sessionverse.
      */
-    public function addSessionVerse( $value )
+    public function addSessionverse( $value )
     {
         $value->setSession($this);
         $this->sessionverses->add($value);
@@ -104,7 +104,7 @@ class Session
      * 
      * @return ArrayCollection The session sessionverses
      */
-    public function getSessionVerses()
+    public function getSessionverses()
     {
         return $this->sessionverses;
     }

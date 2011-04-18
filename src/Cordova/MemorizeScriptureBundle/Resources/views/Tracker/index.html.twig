@@ -9,7 +9,7 @@
     {#% debug users %#}
     <br/>
     {#% for user in users %#}
-	    {% include 'MemorizeScriptureBundle:Tracker:user.html.twig' with { 'user': user } %}
+	    {% include 'MemorizeScriptureBundle:Tracker:user.html.twig' with { 'user': app.user } %}
 	{#% else %#}
 	    <!--There are no users loaded-->
     {#% endfor %#}

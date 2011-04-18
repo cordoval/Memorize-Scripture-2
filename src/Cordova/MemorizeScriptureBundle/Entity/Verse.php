@@ -47,7 +47,7 @@ class Verse
      *
      * @return ArrayCollection $sessionverses
      */
-    public function getSessionVerses()
+    public function getSessionverses()
     {
         return $this->sessionverses;
     }
@@ -57,7 +57,7 @@ class Verse
      *
      * @param SessionVerse $value sessionverse
      */
-    public function addSessionVerse( $value )
+    public function addSessionverse( $value )
     {
         $value->setVerse($this);
         $this->sessionverses->add($value);
