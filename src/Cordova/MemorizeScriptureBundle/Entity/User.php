@@ -11,24 +11,24 @@ use FOS\UserBundle\Entity\User as BaseUser;
  * @orm:Entity
  * @orm:Table(name="user")
  */
-class User extends BaseUser //implements \Serializable
+class User extends BaseUser implements \Serializable
 {
 
-    /*public function serialize()
+    public function serialize()
     {
       return serialize(
            array(
-                $this->id
+                $this->getUsername()
            )
       );
     }
 
     public function unserialize($serialized)
     {
-      list(
-          $this->id
-      ) = unserialize($serialized);
-    }*/
+
+      $arr = unserialize($serialized);
+      $this->setUsername($arr[0]);
+    }
 
     /**
      * @orm:Id

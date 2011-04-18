@@ -16,7 +16,9 @@ class TrackerControllerTest extends WebTestCase
  	
         $this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 
-        $form = $crawler->selectButton('login')->form();
+        var_dump($client->getResponse()->getContent());
+        
+        $form = $crawler->selectButton('security.login.submit')->form();
         
         $crawler = $client->submit($form, array(
             '_username'      => 'cordoval',
@@ -27,15 +29,15 @@ class TrackerControllerTest extends WebTestCase
         
         $crawler = $client->request('GET','/tracker');
 
-        $crawler = $client->followRedirect();
+        //$crawler = $client->followRedirect();
         
         var_dump($client->getResponse()->getContent());
         
-            //$this->assertTrue($client->getResponse()->getStatusCode() == '200' );
+        $this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 
-        //$this->assertTrue($crawler->filter('title:contains("Memorize Scripture | Home")')->count() > 0);
+        $this->assertTrue($crawler->filter('title:contains("Memorize Scripture | Home")')->count() > 0);
 
-        //$this->assertRegExp('/Dashboard/', $client->getResponse()->getContent());
+        $this->assertRegExp('/Dashboard/', $client->getResponse()->getContent());
 
             //$this->assertTrue($crawler->filter('h2')->count() > 0);
             //$client->getResponse()->getContent()
@@ -44,7 +46,7 @@ class TrackerControllerTest extends WebTestCase
             //$this->assertTrue($crawler->filter('h2.post_title')->count() > 0);
     }
     
-    function testCreateSession() {
+    /*function testCreateSession() {
         
         $client = $this->createClient();
 
@@ -72,5 +74,5 @@ class TrackerControllerTest extends WebTestCase
         
         //$crawler = $client->followRedirect();
         
-    }
+    }*/
 }
