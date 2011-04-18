@@ -97,7 +97,7 @@ class Session
      * Gets the title of the session.
      * 
      * @return string The title
-     */
+     */ 
     public function getTitle()
     {
         return $this->title;
