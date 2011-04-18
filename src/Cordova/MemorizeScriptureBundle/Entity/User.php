@@ -14,6 +14,8 @@ use FOS\UserBundle\Entity\User as BaseUser;
 class User extends BaseUser implements \Serializable
 {
 
+    protected $bar;
+
     public function serialize()
     {
       return serialize(
@@ -31,7 +33,6 @@ class User extends BaseUser implements \Serializable
           $this->sessions
       ) = unserialize($serialized);
     }
-
     /**
      * @orm:Id
      * @orm:Column(type="integer")

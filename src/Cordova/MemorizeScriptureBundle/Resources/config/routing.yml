@@ -14,7 +14,7 @@ fos_user_user:
 #        type: sonata_admin
 #        prefix: /admin
 
-MemorizeScripture:
+MemorizeScripture_tracker:
     pattern:  /tracker
     defaults: { _controller: MemorizeScriptureBundle:Tracker:index }
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace Cordova\MemorizeScriptureBundle\Entity;
-
+//implements \Serializable
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -9,10 +9,10 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @orm:Table(name="session")
  * @orm:HasLifecycleCallbacks
  */
-class Session implements \Serializable
+class Session
 {
 
-    public function serialize()
+    /*public function serialize()
     {
       return serialize(
            array(
@@ -36,7 +36,7 @@ class Session implements \Serializable
           $this->updatedAt
       ) = unserialize($serialized);
     }
-    
+    */
     /**
      * @orm:Id
      * @orm:Column(type="integer")
