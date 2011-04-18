@@ -23,13 +23,13 @@ class TrackerControllerTest extends WebTestCase
             '_password'      => 'password',
         ));
 
-        //$crawler = $client->followRedirect();
+        $crawler = $client->followRedirect();
         
         $crawler = $client->request('GET','/tracker');
 
-            //$crawler = $client->followRedirect();
+        $crawler = $client->followRedirect();
         
-        //var_dump($client->getResponse()->getContent());
+        var_dump($client->getResponse()->getContent());
         
             //$this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 

@@ -20,8 +20,7 @@ class User extends BaseUser implements \Serializable
     {
       return serialize(
            array(
-                $this->id,
-                $this->sessions
+                $this->id
            )
       );
     }
@@ -29,10 +28,10 @@ class User extends BaseUser implements \Serializable
     public function unserialize($serialized)
     {
       list(
-          $this->id,
-          $this->sessions
+          $this->id
       ) = unserialize($serialized);
     }
+
     /**
      * @orm:Id
      * @orm:Column(type="integer")
