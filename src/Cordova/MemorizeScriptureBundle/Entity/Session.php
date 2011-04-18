@@ -9,8 +9,34 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @orm:Table(name="session")
  * @orm:HasLifecycleCallbacks
  */
-class Session
+class Session implements \Serializable
 {
+
+    public function serialize()
+    {
+      return serialize(
+           array(
+                $this->id,
+                $this->title,
+                $this->sessionverses,
+                $this->createdAt,
+                $this->updatedAt,
+                $this->user
+           )
+      );
+    }
+
+    public function unserialize($serialized)
+    {
+      list(
+          $this->id,
+          $this->title,
+          $this->sessionverses,
+          $this->createdAt,
+          $this->updatedAt
+      ) = unserialize($serialized);
+    }
+    
     /**
      * @orm:Id
      * @orm:Column(type="integer")
@@ -34,8 +60,6 @@ class Session
      * @var ArrayCollection $sessionverses
      */
     protected $sessionverses;
-
-    /* sounds like i need to implement the Serialize interface for this class */ 
 
     /**
      * @orm:Column(type="datetime", name="created_at")
