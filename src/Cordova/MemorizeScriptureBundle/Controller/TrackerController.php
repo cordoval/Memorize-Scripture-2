@@ -87,8 +87,9 @@ class TrackerController extends Controller
         );
         return new Response(json_encode($arr));
     }
-    
-    public function nameAction() {
+
+    // creating the next action for sessions...
+    /*public function nameAction() {
         
-    }
+    }*/
 }
