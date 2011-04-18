@@ -151,7 +151,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $sessionverse1->setRecitedTimes('1');
         $todaysdate1 = new \DateTime("now");
         $sessionverse1->setEntryDate($todaysdate1);
-        $session->addSessionVerse($sessionverse1);
+        $session->addSessionverse($sessionverse1);
 
         $manager->persist($sessionverse1);
 
@@ -161,7 +161,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $verse1->setChapter($chapter);
         $verse1->setVersetext('In the beginning was the Word, and the Word was with God, and the Word was God.');
         $manager->persist($verse1);
-        $verse1->addSessionVerse($sessionverse1);
+        $verse1->addSessionverse($sessionverse1);
 
         // created a sessionverse 2 sample
         $sessionverse2 = new SessionVerse();
@@ -174,7 +174,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $sessionverse2->setRecitedTimes('1');
         $todaysdate2 = new \DateTime("now");
         $sessionverse2->setEntryDate($todaysdate2);
-        $session->addSessionVerse($sessionverse2);
+        $session->addSessionverse($sessionverse2);
 
         $manager->persist($sessionverse2);
 
@@ -184,7 +184,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $verse2->setChapter($chapter);
         $verse2->setVersetext('He was in the beginning with God.');
         $manager->persist($verse2);
-        $verse2->addSessionVerse($sessionverse2);
+        $verse2->addSessionverse($sessionverse2);
 
         // created a sessionverse 3 sample
         $sessionverse3 = new SessionVerse();
@@ -197,7 +197,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $sessionverse3->setRecitedTimes('1');
         $todaysdate3 = new \DateTime("now");
         $sessionverse3->setEntryDate($todaysdate3);
-        $session->addSessionVerse($sessionverse3);
+        $session->addSessionverse($sessionverse3);
 
         $manager->persist($sessionverse3);
 
@@ -207,7 +207,7 @@ class FixtureLoader extends ContainerAware implements FixtureInterface
         $verse3->setChapter($chapter);
         $verse3->setVersetext('All things were made through him, and without him was not any thing made that was made.');
         $manager->persist($verse3);
-        $verse3->addSessionVerse($sessionverse3);
+        $verse3->addSessionverse($sessionverse3);
 
         $manager->flush();
     }

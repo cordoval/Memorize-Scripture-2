@@ -146,7 +146,7 @@ class SessionVerse
      */
     public function setVerse( $value )
     {
-        //$value->addSessionVerse($this);
+        //$value->addSessionverse($this);
         $this->verse = $value;
     }
     
