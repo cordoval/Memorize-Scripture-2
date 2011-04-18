@@ -44,14 +44,14 @@ class Session implements \Serializable
      * 
      * @var integer $id
      */
-    protected $id;
+    public $id;
     
     /**
      * @orm:Column(type="string", length="255")
      * 
      * @var string $title
      */
-    protected $title;
+    public $title;
 
     /**
      * @orm:OneToMany(targetEntity="SessionVerse", mappedBy="session")
@@ -59,21 +59,21 @@ class Session implements \Serializable
      * 
      * @var ArrayCollection $sessionverses
      */
-    protected $sessionverses;
+    public $sessionverses;
 
     /**
      * @orm:Column(type="datetime", name="created_at")
      * 
      * @var DateTime $createdAt
      */
-    protected $createdAt;
+    public $createdAt;
     
     /**
      * @orm:Column(type="datetime", name="updated_at", nullable="true")
      * 
      * @var DateTime $updatedAt
      */
-    protected $updatedAt;
+    public $updatedAt;
     
     /**
      * @orm:ManyToOne(targetEntity="User", inversedBy="sessions")
@@ -81,7 +81,7 @@ class Session implements \Serializable
      * 
      * @var User $user
      */
-    protected $user;
+    public $user;
     
     /**
      * Gets the id.
