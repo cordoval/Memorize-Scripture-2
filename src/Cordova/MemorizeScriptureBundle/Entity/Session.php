@@ -34,7 +34,9 @@ class Session
      * @var ArrayCollection $sessionverses
      */
     protected $sessionverses;
-    
+
+    /* sounds like i need to implement the Serialize interface for this class */ 
+
     /**
      * @orm:Column(type="datetime", name="created_at")
      * 
