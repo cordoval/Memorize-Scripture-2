@@ -65,7 +65,7 @@ class TrackerController extends Controller
         // sets the session active on user object 
         $session->setActive();
 
-	$em->persist($session);
+	    $em->persist($session);
 
         $em->flush();
 
@@ -83,7 +83,7 @@ class TrackerController extends Controller
         $user->setActiveSession($id);
         
         $arr = array(
-                "newsessiontitle" => "$title"
+                "idofactivesession" => "$id"
         );
         return new Response(json_encode($arr));
     }
