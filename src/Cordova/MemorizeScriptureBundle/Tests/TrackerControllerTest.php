@@ -16,7 +16,7 @@ class TrackerControllerTest extends WebTestCase
  	
         $this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 
-        var_dump($client->getResponse()->getContent());
+        //var_dump($client->getResponse()->getContent());
         
         $form = $crawler->selectButton('security.login.submit')->form();
         
@@ -31,7 +31,7 @@ class TrackerControllerTest extends WebTestCase
 
         //$crawler = $client->followRedirect();
         
-        var_dump($client->getResponse()->getContent());
+        //var_dump($client->getResponse()->getContent());
         
         $this->assertTrue($client->getResponse()->getStatusCode() == '200' );
 
@@ -46,7 +46,7 @@ class TrackerControllerTest extends WebTestCase
             //$this->assertTrue($crawler->filter('h2.post_title')->count() > 0);
     }
     
-    /*function testCreateSession() {
+    function testCreateSession() {
         
         $client = $this->createClient();
 
@@ -74,5 +74,5 @@ class TrackerControllerTest extends WebTestCase
         
         //$crawler = $client->followRedirect();
         
-    }*/
+    }
 }
