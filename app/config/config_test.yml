@@ -12,12 +12,3 @@ web_profiler:
 #zend:
 #    logger:
 #        priority: debug
-
-security:
-    firewalls:
-        main:
-#            pattern:    /.*
-            http_basic: true
-            logout:     true
-            security: true
-            anonymous: true
