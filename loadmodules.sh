@@ -1,0 +1,17 @@
+git submodule add git://github.com/fabpot/Twig-extensions.git vendor/twig-extensions
+git submodule add git://github.com/symfony/symfony.git vendor/symfony
+#git submodule add git://github.com/symfony/zend-log.git vendor/zend-log/Zend/Log
+git submodule add git://github.com/Seldaek/monolog.git vendor/monolog
+git submodule add git://github.com/swiftmailer/swiftmailer.git vendor/swiftmailer
+git submodule add git://github.com/kriswallsmith/assetic.git vendor/assetic
+git submodule add git://github.com/fabpot/Twig.git vendor/twig
+git submodule add git://github.com/doctrine/dbal.git vendor/doctrine-dbal
+git submodule add git://github.com/doctrine/data-fixtures.git vendor/doctrine-data-fixtures
+git submodule add git://github.com/doctrine/migrations.git vendor/doctrine-migrations
+git submodule add git://github.com/doctrine/common.git vendor/doctrine-common
+git submodule add git://github.com/FriendsOfSymfony/UserBundle.git vendor/bundles/FOS/UserBundle
+git submodule add git@github.com:sonata-project/jQueryBundle.git src/Sonata/jQueryBundle
+git submodule add git@github.com:sonata-project/BluePrintBundle.git src/Sonata/BluePrintBundle
+git submodule add git@github.com:sonata-project/AdminBundle.git src/Sonata/AdminBundle
+git submodule add git://github.com/doctrine/doctrine2.git vendor/doctrine
+git submodule add git://github.com/knplabs/MenuBundle.git src/Knplabs/Bundle/MenuBundle
