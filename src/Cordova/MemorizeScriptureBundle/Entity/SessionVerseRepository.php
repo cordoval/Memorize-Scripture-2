@@ -17,4 +17,6 @@ class SessionVerseRepository extends EntityRepository
  
         return $query->getResult();
     }
+
+    
 }

@@ -99,6 +99,6 @@ class TrackerControllerTest extends WebTestCase
         $a = json_decode( $client->getResponse()->getContent(), true );
         $this->assertTrue( is_array( $a ) );
         $this->assertTrue( $a['idofactivesession'] == '1', "returned value is not default");
-
     }
+
 }
