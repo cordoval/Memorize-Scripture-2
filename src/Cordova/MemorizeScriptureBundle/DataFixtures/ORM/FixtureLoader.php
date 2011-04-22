@@ -19,6 +19,7 @@ use FOS\UserBundle\Entity\UserManager;
 
 
 include(__DIR__ . '/../../Scrap/scrap.php');
+
 class FixtureLoader extends ContainerAware implements FixtureInterface
 {
     public function load($manager)

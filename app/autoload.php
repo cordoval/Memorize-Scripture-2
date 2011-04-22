@@ -15,7 +15,8 @@ $loader->registerNamespaces(array(
     'Doctrine\\DBAL'                   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'                         => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                          => __DIR__.'/../vendor/assetic/src',
-    'Monolog'         		       => __DIR__.'/../vendor/monolog/src',
+    'Monolog'         		           => __DIR__.'/../vendor/monolog/src',
+    //'Liip'                             => __DIR__.'/../vendor/bundles',
     // there was a zend line here got removed
 ));
 $loader->registerPrefixes(array(

@@ -3,11 +3,15 @@
 namespace Cordova\MemorizeScriptureBundle\Tests\Controller;
  
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+//use Liip\FunctionalTestBundle\Test\WebTestCase;
  
 class TrackerControllerTest extends WebTestCase
 {
     public function testIndex()
     {
+        //$this->loadFixtures(array('Liip\FooBundle\Tests\Fixtures\LoadUserData'));
+        //$this->loadFixtures(array('Cordova\MemorizeScriptureBundle\DataFixtures\ORM\FixtureLoader'));
+
         $client = $this->createClient();
 
         $crawler = $client->request('GET', '/tracker');

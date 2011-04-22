@@ -12,3 +12,5 @@ web_profiler:
 #zend:
 #    logger:
 #        priority: debug
+
+#liip_functional_test: ~

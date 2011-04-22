@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             //new Sonata\jQueryBundle\SonatajQueryBundle(),
             //new Sonata\BluePrintBundle\SonataBluePrintBundle(),
             //new Sonata\AdminBundle\SonataAdminBundle(),
+            //new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Cordova\MemorizeScriptureBundle\MemorizeScriptureBundle(),
         );
