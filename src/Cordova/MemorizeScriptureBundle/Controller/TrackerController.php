@@ -89,8 +89,14 @@ class TrackerController extends Controller
     }
 
 
-    // creating the next action for sessions...
-    /*public function nameAction() {
-        
-    }*/
+    // method to be rendered within the twig template for tracker index action
+    public function displayTodayVersesAction() {
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $user_id = $user->getId();
+
+        $em = $this->get('doctrine.orm.entity_manager');
+        $verses1 = $em->getRepository('Cordova\MemorizeScriptureBundle\Entity\SessionVerse')->getTodayVerses($user_id);
+
+        return $this->render('MemorizeScriptureBundle:Tracker:dayview.html.twig', array('verses1' => $verses1));
+    }
 }

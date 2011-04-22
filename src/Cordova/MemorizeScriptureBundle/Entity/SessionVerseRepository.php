@@ -27,7 +27,6 @@ class SessionVerseRepository extends EntityRepository
                'ORDER BY s.createdAt DESC';
         
         $query = $this->getEntityManager()->createQuery($dql);
-        $query->setMaxResults($limit);
         //$user = $this->container->get('security.context')->getToken()->getUser();
         $query->setParameter(1, $user_id);
 
