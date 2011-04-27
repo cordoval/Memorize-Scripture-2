@@ -11,7 +11,7 @@ $loader->registerNamespaces(array(
     //'Sonata'                           => __DIR__.'/../src',
     'Doctrine\\Common'                 => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
-    'Doctrine\\DBAL\\Migrations'       => __DIR__.'/../vendor/doctrine-migrations/lib',
+    //'Doctrine\\DBAL\\Migrations'       => __DIR__.'/../vendor/doctrine-migrations/lib',
     'Doctrine\\DBAL'                   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'                         => __DIR__.'/../vendor/doctrine/lib',
     'Assetic'                          => __DIR__.'/../vendor/assetic/src',

@@ -20,7 +20,7 @@ class SessionVerseRepository extends EntityRepository
 
     public function getTodayVerses($user_id) {
 
-        $dql = 'SELECT s FROM Cordova\MemorizeScriptureBundle\Entity\SessionVerse s ' .
+        $dql = 'SELECT s, s.v FROM Cordova\MemorizeScriptureBundle\Entity\SessionVerse s ' .
                'INNER JOIN s.session g ' .
                'INNER JOIN g.user u ' .
                'WHERE u.id = ?1' .
