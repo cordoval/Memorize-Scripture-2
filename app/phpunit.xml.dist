@@ -14,6 +14,7 @@
   <testsuites>
       <testsuite name="Project Test Suite">
           <directory>../src/*/*Bundle/Tests</directory>
+          <!--<directory>../vendor/bundles/FOS/UserBundle</directory>-->
       </testsuite>
   </testsuites>
 
@@ -22,14 +23,4 @@
       <server name="KERNEL_DIR" value="/path/to/your/app/" />
   </php>
   //-->
-
-  <filter>
-      <whitelist>
-          <directory>../src</directory>
-          <exclude>
-              <directory>../src/*/*Bundle/Resources</directory>
-              <directory>../src/*/*Bundle/Tests</directory>
-          </exclude>
-      </whitelist>
-  </filter>
 </phpunit>
