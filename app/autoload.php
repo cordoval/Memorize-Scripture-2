@@ -4,10 +4,11 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
+    'Symfony\\Bundle\\DoctrineFixturesBundle'       => __DIR__.'/../vendor/bundles',
     'Symfony'                          => __DIR__.'/../vendor/symfony/src',
     'Cordova'                          => __DIR__.'/../src',
     'FOS'                              => __DIR__.'/../vendor/bundles',
-    'DoctrineFixturesBundle'           => __DIR__.'/../vendor/bundles/DoctrineFixturesBundle',
+    //'DoctrineFixturesBundle'           => __DIR__.'/../vendor/bundles',
     //'Knplabs'                          => __DIR__.'/../src',
     //'Sonata'                           => __DIR__.'/../src',
     //'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib', old way
