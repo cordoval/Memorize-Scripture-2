@@ -29,14 +29,14 @@ MemorizeScripture_createSession:
 MemorizeScripture_makeSessionActive:
     pattern:  /tracker/makesessionactive/{id}
     defaults: { _controller: MemorizeScriptureBundle:Tracker:makeSessionActive }
-    
-show_page:
-    pattern:  /{page}
-    defaults: { _controller: MemorizeScriptureBundle:Pages:show }
 
 homepage:
     pattern:  /
     defaults: { _controller: MemorizeScriptureBundle:Blog:index }
+        
+show_page:
+    pattern:  /{page}
+    defaults: { _controller: MemorizeScriptureBundle:Pages:show }
 
 #homepage:
 #    pattern:  /
