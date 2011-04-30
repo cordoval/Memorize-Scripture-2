@@ -9,8 +9,9 @@ $loader->registerNamespaces(array(
     'FOS'                              => __DIR__.'/../vendor/bundles',
     //'Knplabs'                          => __DIR__.'/../src',
     //'Sonata'                           => __DIR__.'/../src',
+    //'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib', old way
+    'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-fixtures/lib',
     'Doctrine\\Common'                 => __DIR__.'/../vendor/doctrine-common/lib',
-    'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     //'Doctrine\\DBAL\\Migrations'       => __DIR__.'/../vendor/doctrine-migrations/lib',
     'Doctrine\\DBAL'                   => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine'                         => __DIR__.'/../vendor/doctrine/lib',

@@ -52,3 +52,6 @@
 [submodule "vendor/bundles/Liip/FunctionalTestBundle"]
 	path = vendor/bundles/Liip/FunctionalTestBundle
 	url = git://github.com/liip/FunctionalTestBundle.git
+[submodule "vendor/bundles/DoctrineFixturesBundle"]
+	path = vendor/bundles/DoctrineFixturesBundle
+	url = https://github.com/symfony/DoctrineFixturesBundle.git
