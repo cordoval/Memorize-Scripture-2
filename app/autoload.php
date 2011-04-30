@@ -7,6 +7,7 @@ $loader->registerNamespaces(array(
     'Symfony'                          => __DIR__.'/../vendor/symfony/src',
     'Cordova'                          => __DIR__.'/../src',
     'FOS'                              => __DIR__.'/../vendor/bundles',
+    'DoctrineFixturesBundle'           => __DIR__.'/../vendor/bundles/DoctrineFixturesBundle',
     //'Knplabs'                          => __DIR__.'/../src',
     //'Sonata'                           => __DIR__.'/../src',
     //'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib', old way
