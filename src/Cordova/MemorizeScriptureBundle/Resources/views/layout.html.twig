@@ -1,7 +1,14 @@
 {% extends "::base.html.twig" %}
  
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/memorizescripture/css/blog.css') }}" media="screen" />
+    <!--<link rel="stylesheet" type="text/css" href="{#{ asset('bundles/memorizescripture/css/blog.css') }#}" media="screen" />-->
+    {% stylesheets output='css/compressed.css' filter='yui_css'
+                '@MemorizeScriptureBundle/Resources/css/blog.css'
+    %}
+                {# If your files are in web/css/mystyle1.css
+                    call them with: 'css/mystyle.css' #}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="screen" />
+    {% endstylesheets %}
 {% endblock %}
  
 {% block body %}
