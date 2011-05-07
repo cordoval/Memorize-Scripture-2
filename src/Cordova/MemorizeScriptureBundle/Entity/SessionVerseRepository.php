@@ -20,11 +20,19 @@ class SessionVerseRepository extends EntityRepository
 
     public function getTodayVerses($user_id) {
 
-        $dql = 'SELECT s, s.v FROM Cordova\MemorizeScriptureBundle\Entity\SessionVerse s ' .
+        /*$dql = 'SELECT s, v FROM Cordova\\MemorizeScriptureBundle\\Entity\\SessionVerse s ' .
                'INNER JOIN s.session g ' .
                'INNER JOIN g.user u ' .
                'WHERE u.id = ?1' .
-               'ORDER BY s.createdAt DESC';
+               'ORDER BY s.createdAt DESC';*/
+
+        $dql = 'SELECT sv, v, s, u FROM MemorizeScriptureBundle:SessionVerse sv '.
+                'INNER JOIN sv.verse v '.
+                'INNER JOIN sv.session s '.
+                'INNER JOIN s.user u '.
+                'WHERE u.id = ?1 '.
+                'ORDER BY sv.createdAt DESC';
+                //'WHERE u.id = :uid';
         
         $query = $this->getEntityManager()->createQuery($dql);
         //$user = $this->container->get('security.context')->getToken()->getUser();

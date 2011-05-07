@@ -55,3 +55,6 @@
 [submodule "vendor/bundles/DoctrineFixturesBundle"]
 	path = vendor/bundles/DoctrineFixturesBundle
 	url = https://github.com/symfony/DoctrineFixturesBundle.git
+[submodule "src/FOS/CommentBundle"]
+	path = src/FOS/CommentBundle
+	url = git://github.com/FriendsOfSymfony/CommentBundle.git
