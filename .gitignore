@@ -12,6 +12,7 @@ results/*
 .idea/*
 .idea/.name
 Capfile
+web/images/*
 .rsync_cache/*
 .rsync_cache/
 .rsync_cache
