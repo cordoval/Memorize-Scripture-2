@@ -9,8 +9,9 @@
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/memorizescripture/css/reset.css') }}" media="screen" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-        {% javascripts 'js/src/*' filter='?yui_js' %}
-        <script src="{{ asset('bundles/memorizescripture/js/ajax.js')}}"></script>
+        <!--<script src="{{ asset('bundles/memorizescripture/js/ajax.js')}}"></script>-->
+        {% javascripts output='js/*' 'bundles/memorizescripture/js/ajax.js' filter='?yui_js' %}
+        <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
         {% block head %}{% endblock %}
     </head>

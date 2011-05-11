@@ -125,11 +125,11 @@ div.buttontooglex {
 }
 
 div.buttontooglex.yread {
-    background-image: url('../images/icons/asterisk_yellow.png');
+    background-image: url('/web/images/icons/asterisk_yellow.png');
 }
 
 div.buttontooglex.aread {
-    background-image: url('../images/icons/tick.png');
+    background-image: url('/web/images/icons/tick.png');
 }
 
 
@@ -144,4 +144,16 @@ div.versenumber {
     line-height: 7px;
     font-size: 0.7em;
     padding: 10px;
+}
+
+form {
+    p
+}
+form label {
+    float: left;
+    /*padding: 10px;*/
+    clear: left;
+}
+form input {
+    float: left;
 }

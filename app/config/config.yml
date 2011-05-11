@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
 
 framework:
+    translator: { fallback: en }
     charset:       UTF-8
     csrf_protection:
         enabled: true
@@ -23,6 +24,8 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
     extensions:       [twig.extension.debug]
+    form:
+        resources: ['CordovaMemorizeScriptureBundle:Form:fields.html.twig']
 
 # Assetic Configuration
 #assetic: ~

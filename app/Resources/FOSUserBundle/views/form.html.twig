@@ -1,0 +1,7 @@
+{% form_theme form 'CordovaMemorizeScriptureBundle:Form:fields.html.twig' %}
+
+{% block field_label %}
+{% spaceless %}
+    <label for="{{ id }}">{{ id|trans([], 'FOSUserBundle') }}</label>
+{% endspaceless %}
+{% endblock field_label %}
