@@ -6,6 +6,10 @@ security:
             id: fos_user.user_manager
 
     firewalls:
+        secondary:
+            pattern:      ^/(css|js)/
+#            anonymous:    true
+            security:     false
         main:
             pattern:      .*
             form-login:
@@ -16,10 +20,6 @@ security:
                 failure_path:   null
             logout:       true
             anonymous:    true
-        secondary:
-            pattern:      /index_dev.php/css/.*
-#            anonymous:    true
-            security:     false
 
     access_control:
         # The WDT has to be allowed to anonymous users to avoid requiring the login with the AJAX request
