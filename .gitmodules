@@ -57,4 +57,4 @@
 	url = git://github.com/FriendsOfSymfony/CommentBundle.git
 [submodule "vendor/bundles/FOS/UserBundle"]
 	path = vendor/bundles/FOS/UserBundle
-	url = https://cordoval@github.com/cordoval/UserBundle.git
+	url = https://github.com/cordoval/UserBundle.git
