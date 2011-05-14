@@ -58,6 +58,3 @@
 [submodule "vendor/bundles/FOS/UserBundle"]
 	path = vendor/bundles/FOS/UserBundle
 	url = https://cordoval@github.com/cordoval/UserBundle.git
-[submodule "src/Ideaup"]
-	path = src/Ideaup
-	url = git://github.com/javiacei/IdeupSimplePaginatorBundle.git
