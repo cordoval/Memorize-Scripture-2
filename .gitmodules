@@ -39,7 +39,7 @@
 	url = git://github.com:sonata-project/BluePrintBundle.git
 [submodule "src/Sonata/AdminBundle"]
 	path = src/Sonata/AdminBundle
-	url = git://github.com:cordoval/AdminBundle.git
+	url = git://github.com/cordoval/AdminBundle.git
 [submodule "vendor/doctrine"]
 	path = vendor/doctrine
 	url = git://github.com/doctrine/doctrine2.git
