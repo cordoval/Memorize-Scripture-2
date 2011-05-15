@@ -601,6 +601,9 @@ abstract class Kernel implements KernelInterface
     }
     public function shutdown()
     {
+        if (false === $this->booted) {
+            return;
+        }
         $this->booted = false;
         foreach ($this->getBundles() as $bundle) {
             $bundle->shutdown();
@@ -835,6 +838,15 @@ abstract class Kernel implements KernelInterface
     }
     protected function buildContainer()
     {
+        foreach (array('cache' => $this->getCacheDir(), 'logs' => $this->getLogDir()) as $name => $dir) {
+            if (!is_dir($dir)) {
+                if (false === @mkdir($dir, 0777, true)) {
+                    throw new \RuntimeException(sprintf("Unable to create the %s directory (%s)\n", $name, dirname($dir)));
+                }
+            } elseif (!is_writable($dir)) {
+                throw new \RuntimeException(sprintf("Unable to write in the %s directory (%s)\n", $name, $dir));
+            }
+        }
         $container = new ContainerBuilder(new ParameterBag($this->getKernelParameters()));
         $extensions = array();
         foreach ($this->bundles as $bundle) {
@@ -851,16 +863,6 @@ abstract class Kernel implements KernelInterface
                 $container->getCompilerPassConfig()->setMergePass(new MergeExtensionConfigurationPass($extensions));
         if (null !== $cont = $this->registerContainerConfiguration($this->getContainerLoader($container))) {
             $container->merge($cont);
-        }
-        foreach (array('cache', 'logs') as $name) {
-            $dir = $container->getParameter(sprintf('kernel.%s_dir', $name));
-            if (!is_dir($dir)) {
-                if (false === @mkdir($dir, 0777, true)) {
-                    exit(sprintf("Unable to create the %s directory (%s)\n", $name, dirname($dir)));
-                }
-            } elseif (!is_writable($dir)) {
-                exit(sprintf("Unable to write in the %s directory (%s)\n", $name, $dir));
-            }
         }
         $container->addCompilerPass(new AddClassesToCachePass($this));
         $container->compile();
@@ -940,14 +942,10 @@ class ParameterBag
     {
         $this->parameters = array_replace($this->parameters, $parameters);
     }
-    public function get($key, $default = null)
+    public function get($path, $default = null, $deep = false)
     {
-        return array_key_exists($key, $this->parameters) ? $this->parameters[$key] : $default;
-    }
-    public function getDeep($path, $default = null)
-    {
-        if (false === $pos = strpos($path, '[')) {
-            return $this->get($path, $default);
+        if (!$deep || false === $pos = strpos($path, '[')) {
+            return array_key_exists($path, $this->parameters) ? $this->parameters[$path] : $default;
         }
         $root = substr($path, 0, $pos);
         if (!array_key_exists($root, $this->parameters)) {
@@ -995,21 +993,21 @@ class ParameterBag
     {
         unset($this->parameters[$key]);
     }
-    public function getAlpha($key, $default = '')
+    public function getAlpha($key, $default = '', $deep = false)
     {
-        return preg_replace('/[^[:alpha:]]/', '', $this->get($key, $default));
+        return preg_replace('/[^[:alpha:]]/', '', $this->get($key, $default, $deep));
     }
-    public function getAlnum($key, $default = '')
+    public function getAlnum($key, $default = '', $deep = false)
     {
-        return preg_replace('/[^[:alnum:]]/', '', $this->get($key, $default));
+        return preg_replace('/[^[:alnum:]]/', '', $this->get($key, $default, $deep));
     }
-    public function getDigits($key, $default = '')
+    public function getDigits($key, $default = '', $deep = false)
     {
-        return preg_replace('/[^[:digit:]]/', '', $this->get($key, $default));
+        return preg_replace('/[^[:digit:]]/', '', $this->get($key, $default, $deep));
     }
-    public function getInt($key, $default = 0)
+    public function getInt($key, $default = 0, $deep = false)
     {
-        return (int) $this->get($key, $default);
+        return (int) $this->get($key, $default, $deep);
     }
 }
 }
@@ -1310,7 +1308,14 @@ class Request
     }
     static public function createFromGlobals()
     {
-        return new static($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
+        $request = new static($_GET, $_POST, array(), $_COOKIE, $_FILES, $_SERVER);
+        if (0 === strpos($request->server->get('CONTENT_TYPE'), 'application/x-www-form-urlencoded')
+            && in_array(strtoupper($request->server->get('REQUEST_METHOD', 'GET')), array('PUT', 'DELETE'))
+        ) {
+            parse_str($request->getContent(), $data);
+            $request->request = new ParameterBag($data);
+        }
+        return $request;
     }
     static public function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null)
     {
@@ -1422,9 +1427,9 @@ class Request
         }
                         $_REQUEST = array_merge($_GET, $_POST);
     }
-                        public function get($key, $default = null)
+                        public function get($key, $default = null, $deep = false)
     {
-        return $this->query->get($key, $this->attributes->get($key, $this->request->get($key, $default)));
+        return $this->query->get($key, $this->attributes->get($key, $this->request->get($key, $default, $deep), $deep), $deep);
     }
     public function getSession()
     {
