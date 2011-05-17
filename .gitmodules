@@ -40,9 +40,6 @@
 [submodule "vendor/doctrine"]
 	path = vendor/doctrine
 	url = git://github.com/doctrine/doctrine2.git
-[submodule "src/Knplabs/Bundle/MenuBundle"]
-	path = src/Knplabs/Bundle/MenuBundle
-	url = git://github.com/knplabs/MenuBundle.git
 [submodule "vendor/bundles/Liip/FunctionalTestBundle"]
 	path = vendor/bundles/Liip/FunctionalTestBundle
 	url = git://github.com/liip/FunctionalTestBundle.git
