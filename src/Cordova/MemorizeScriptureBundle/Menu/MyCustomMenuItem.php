@@ -1,6 +1,7 @@
 <?php
 
 namespace Cordova\MemorizeScriptureBundle\Menu;
+
 use Knplabs\Bundle\MenuBundle\MenuItem;
 
 class MyCustomMenuItem extends MenuItem
