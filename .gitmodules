@@ -55,3 +55,6 @@
 [submodule "vendor/symfony"]
 	path = vendor/symfony
 	url = git://github.com/symfony/symfony.git
+[submodule "src/Knplabs/Bundle/MenuBundle"]
+	path = src/Knplabs/Bundle/MenuBundle
+	url = https://github.com/cordoval/MenuBundle.git
