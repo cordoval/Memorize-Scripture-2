@@ -14,12 +14,16 @@ class MainMenu extends Knplabs\Bundle\MenuBundle\Menu
      */
     public function __construct (Request $request, Router $router)
     {
-        parent::__construct();
+        //parent::__construct();
+        parent::__construct(array(), 'Cordova\MemorizeScriptureBundle\Menu\MyCustomMenuItem');
 
         $this->setCurrentUri($request->getRequestUri());
 
-        $this->addChild('Home', $router->generate('homepage'));
-        $this->addChild('About');
+        //$this->addChild('Home', $router->generate('homepage'));
+        $this->addChild(new MyCustomMenuItem('Home', $router->generate('homepage')));
+        //$this->addChild('About');
+        $this->addChild(new MyCustomMenuItem('About', $router->generate('about')));
+
     }
 
 }
