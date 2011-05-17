@@ -18,7 +18,7 @@ class AppKernel extends Kernel
             //new DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             //new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
-            //new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+            new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
             //new Sonata\jQueryBundle\SonatajQueryBundle(),
             //new Sonata\BluePrintBundle\SonataBluePrintBundle(),
             //new Sonata\AdminBundle\SonataAdminBundle(),
