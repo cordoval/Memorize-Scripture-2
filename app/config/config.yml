@@ -12,7 +12,8 @@ framework:
     charset:       UTF-8
     csrf_protection:
         enabled: true
-
+    form:
+      enabled: true
     secret: %csrf_secret%
 
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
