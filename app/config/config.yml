@@ -1,7 +1,7 @@
 imports:
     - { resource: parameters.ini }
     - { resource: security.yml }
-    - { resource: "@CordovaMemorizeScriptureBundle/Resources/config/menu.xml" }
+    - { resource: @MemorizeScriptureBundle/Resources/config/menu.xml }
 
 knplabs_menu:
     templating: true  # this is to enable in-template rendering

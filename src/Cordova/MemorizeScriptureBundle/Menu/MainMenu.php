@@ -6,7 +6,7 @@ use Knplabs\Bundle\MenuBundle\Menu;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Router;
 
-class MainMenu extends Knplabs\Bundle\MenuBundle\Menu
+class MainMenu extends Menu
 {
     /**
      * @param Request $request
@@ -20,9 +20,9 @@ class MainMenu extends Knplabs\Bundle\MenuBundle\Menu
         $this->setCurrentUri($request->getRequestUri());
 
         //$this->addChild('Home', $router->generate('homepage'));
-        $this->addChild(new MyCustomMenuItem('Home', $router->generate('homepage')));
+        $this->addChild(new MyCustomMenuItem('Dashboard', $router->generate('MemorizeScripture_tracker')));
         //$this->addChild('About');
-        $this->addChild(new MyCustomMenuItem('About', $router->generate('about')));
+        $this->addChild(new MyCustomMenuItem('About', $router->generate('show_page', array('page' => 'about'))));
 
     }
 

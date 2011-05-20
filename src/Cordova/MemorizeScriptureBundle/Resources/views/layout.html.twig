@@ -20,11 +20,11 @@
             <nav>
                 {{ menu('main', 3) }}
                 <ul>
-                    <li>
-                        <a href="{{ path('show_page', { 'page' : 'about' }) }}">
+                    <!--<li>
+                        <a href="{#{ path('show_page', { 'page' : 'about' }) }#}">
                             About
                         </a>
-                    </li>
+                    </li>-->
 		    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 		    <li>
 			<a href="{{ path('_security_logout') }}">

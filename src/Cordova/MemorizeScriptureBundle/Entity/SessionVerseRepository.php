@@ -30,7 +30,8 @@ class SessionVerseRepository extends EntityRepository
                 //'WHERE u.id = :uid';
         
         $query = $this->getEntityManager()->createQuery($dql);
-
+        $earliest = 1;
+        $latest = 1;
         $query->setParameter(1, $user_id);
         $query->setParameter(2, $earliest);
         $query->setParameter(3, $latest);
