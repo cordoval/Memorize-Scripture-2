@@ -31,7 +31,7 @@ twig:
     strict_variables: %kernel.debug%
     extensions:       [twig.extension.debug]
     form:
-        resources: ['CordovaMemorizeScriptureBundle:Form:fields.html.twig']
+        resources: ['MemorizeScriptureBundle:Form:fields.html.twig']
 
 # Assetic Configuration
 #assetic: ~
