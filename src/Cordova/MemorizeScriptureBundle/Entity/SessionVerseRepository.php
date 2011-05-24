@@ -3,7 +3,8 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
  
 use Doctrine\ORM\EntityRepository;
- 
+use Doctrine\ORM\Mapping as ORM;
+
 class SessionVerseRepository extends EntityRepository
 {
     public function getLatestSessionVerses($limit = 5)

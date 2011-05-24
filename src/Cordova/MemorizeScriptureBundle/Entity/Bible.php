@@ -4,32 +4,33 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\BibleRepository")
- * @orm:Table(name="bible")
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\BibleRepository")
+ * @ORM\Table(name="bible")
  */
 class Bible
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
        
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $version
      */
     protected $version;
 
     /**
-     * @orm:OneToMany(targetEntity="Book", mappedBy="bible")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="Book", mappedBy="bible")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      *
      * @var ArrayCollection $books
      */
@@ -96,7 +97,7 @@ class Bible
     /**
      * Invoked before the entity is updated.
      * 
-     * @orm:PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {

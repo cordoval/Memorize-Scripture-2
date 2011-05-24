@@ -6,10 +6,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 //use Symfony\Component\Security\Core\User\UserInterface; 
 //(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository") 
 use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity
- * @orm:Table(name="user")
+ * @ORM\Entity
+ * @ORM\Table(name="user")
  */
 class User extends BaseUser implements \Serializable
 {
@@ -31,44 +32,44 @@ class User extends BaseUser implements \Serializable
     }
 
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
     
     /**
-     * @orm:Column(type="string", length="255", name="first_name", nullable=true)
+     * @ORM\Column(type="string", length="255", name="first_name", nullable=true)
      * @var string $firstName
      */
     protected $firstName;
     
     /**
-     * @orm:Column(type="string", length="255", name="last_name",nullable=true)
+     * @ORM\Column(type="string", length="255", name="last_name",nullable=true)
      * @var string $lastName
      */
     protected $lastName;
     
     /**
-     * @orm:OneToMany(targetEntity="Post", mappedBy="user")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="user")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      * 
      * @var ArrayCollection $posts
      */
     protected $posts;
 
     /**
-     * @orm:OneToMany(targetEntity="Session", mappedBy="user")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="Session", mappedBy="user")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      * 
      * @var ArrayCollection $sessions
      */
     protected $sessions;
 
     /**
-     * @orm:Column(type="string", length="255", name="activesessionid", nullable=true)
+     * @ORM\Column(type="string", length="255", name="activesessionid", nullable=true)
      * @var string $activesessionid
      */
     protected $activesessionid;

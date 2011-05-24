@@ -3,97 +3,98 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\SessionVerseRepository")
- * @orm:Table(name="sessionverse")
- * @orm:HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\SessionVerseRepository")
+ * @ORM\Table(name="sessionverse")
+ * @ORM\HasLifecycleCallbacks
  */
 class SessionVerse
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
 
     /**
-     * @orm:ManyToOne(targetEntity="Session", inversedBy="sessionverses")
-     * @orm:JoinColumn(name="session_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Session", inversedBy="sessionverses")
+     * @ORM\JoinColumn(name="session_id", referencedColumnName="id")
      * 
      * @var Session $session
      */
     protected $session;
     
     /**
-     * @orm:ManyToOne(targetEntity="Verse", inversedBy="sessionverses")
-     * @orm:JoinColumn(name="verse_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Verse", inversedBy="sessionverses")
+     * @ORM\JoinColumn(name="verse_id", referencedColumnName="id")
      * 
      * @var Verse $verse
      */
     private $verse;
     
     /**
-     * @orm:Column(type="datetime", name="entry_date")
+     * @ORM\Column(type="datetime", name="entry_date")
      * 
      * @var DateTime $entryDate
      */
     protected $entryDate;
     
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $recited_times
      */
     protected $recited_times;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $extended_recited_times
      */
     protected $extended_recited_times;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $active_day
      */
     protected $active_day;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $active_week
      */
     protected $active_week;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $active_month
      */
     protected $active_month;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $recitedyesno
      */
     protected $recitedyesno;
     
     /**
-     * @orm:Column(type="datetime", name="created_at")
+     * @ORM\Column(type="datetime", name="created_at")
      * 
      * @var DateTime $createdAt
      */
     protected $createdAt;
     
     /**
-     * @orm:Column(type="datetime", name="updated_at", nullable="true")
+     * @ORM\Column(type="datetime", name="updated_at", nullable="true")
      * 
      * @var DateTime $updatedAt
      */
@@ -321,7 +322,7 @@ class SessionVerse
     /**
      * Invoked before the entity is updated.
      * 
-     * @orm:PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {

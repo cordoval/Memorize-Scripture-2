@@ -3,40 +3,41 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\ChapterRepository")
- * @orm:Table(name="chapter")
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\ChapterRepository")
+ * @ORM\Table(name="chapter")
  */
 class Chapter
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
        
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $chapternum
      */
     protected $chapternum;
 
     /**
-     * @orm:OneToMany(targetEntity="Verse", mappedBy="chapter")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="Verse", mappedBy="chapter")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      *
      * @var ArrayCollection $verses
      */
     protected $verses;
 
     /**
-     * @orm:ManyToOne(targetEntity="Book", inversedBy="chapters")
-     * @orm:JoinColumn(name="book_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Book", inversedBy="chapters")
+     * @ORM\JoinColumn(name="book_id", referencedColumnName="id")
      *
      * @var Book $book
      */
@@ -124,7 +125,7 @@ class Chapter
     /**
      * Invoked before the entity is updated.
      * 
-     * @orm:PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {

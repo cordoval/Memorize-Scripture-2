@@ -4,40 +4,41 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\BookRepository")
- * @orm:Table(name="book")
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\BookRepository")
+ * @ORM\Table(name="book")
  */
 class Book
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
        
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $title
      */
     protected $title;
 
     /**
-     * @orm:OneToMany(targetEntity="Chapter", mappedBy="book")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="Chapter", mappedBy="book")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      *
      * @var ArrayCollection $chapters
      */
     protected $chapters;
 
     /**
-     * @orm:ManyToOne(targetEntity="Bible", inversedBy="books")
-     * @orm:JoinColumn(name="bible_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Bible", inversedBy="books")
+     * @ORM\JoinColumn(name="bible_id", referencedColumnName="id")
      *
      * @var Bible $bible
      */
@@ -125,7 +126,7 @@ class Book
     /**
      * Invoked before the entity is updated.
      * 
-     * @orm:PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {

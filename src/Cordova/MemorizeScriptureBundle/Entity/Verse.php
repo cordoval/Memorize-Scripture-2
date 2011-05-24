@@ -3,40 +3,41 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\VerseRepository")
- * @orm:Table(name="verse")
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\VerseRepository")
+ * @ORM\Table(name="verse")
  */
 class Verse
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
     
     /**
-     * @orm:OneToMany(targetEntity="SessionVerse", mappedBy="verse")
-     * @orm:OrderBy({"createdAt" = "DESC"})
+     * @ORM\OneToMany(targetEntity="SessionVerse", mappedBy="verse")
+     * @ORM\OrderBy({"createdAt" = "DESC"})
      *
      * @var ArrayCollection $sessionverses
      */
     private $sessionverses;
 
     /**
-     * @orm:ManyToOne(targetEntity="Chapter", inversedBy="verses")
-     * @orm:JoinColumn(name="chapter_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Chapter", inversedBy="verses")
+     * @ORM\JoinColumn(name="chapter_id", referencedColumnName="id")
      *
      * @var Chapter $chapter
      */
     private $chapter;
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $versenum
      */
@@ -115,7 +116,7 @@ class Verse
     }
 
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $versetext
      */

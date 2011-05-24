@@ -1,31 +1,32 @@
 <?php
 
 namespace Cordova\MemorizeScriptureBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity
- * @orm:Table(name="category")
+ * @ORM\Entity
+ * @ORM\Table(name="category")
  */
 class Category
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
     
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * 
      * @var string $name
      */
     protected $name;
     
     /**
-     * @orm:Column(type="datetime", name="created_at")
+     * @ORM\Column(type="datetime", name="created_at")
      * 
      * @var DateTime $createdAt
      */

@@ -3,79 +3,80 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @orm:Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\PostRepository")
- * @orm:Table(name="post")
- * @orm:HasLifecycleCallbacks
+ * @ORM\Entity(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\PostRepository")
+ * @ORM\Table(name="post")
+ * @ORM\HasLifecycleCallbacks
  */
 class Post
 {
     /**
-     * @orm:Id
-     * @orm:Column(type="integer")
-     * @orm:GeneratedValue(strategy="AUTO")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      * 
      * @var integer $id
      */
     protected $id;
     
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * 
      * @var string $title
      */
     protected $title;
     
     /**
-     * @orm:Column(type="string", length="255")
+     * @ORM\Column(type="string", length="255")
      * 
      * @var string $slug
      */
     protected $slug;
     
     /**
-     * @orm:Column(type="text")
+     * @ORM\Column(type="text")
      * 
      * @var string $content
      */
     protected $content;
     
     /**
-     * @orm:Column(type="datetime", name="created_at")
+     * @ORM\Column(type="datetime", name="created_at")
      * 
      * @var DateTime $createdAt
      */
     protected $createdAt;
     
     /**
-     * @orm:Column(type="datetime", name="updated_at", nullable="true")
+     * @ORM\Column(type="datetime", name="updated_at", nullable="true")
      * 
      * @var DateTime $updatedAt
      */
     protected $updatedAt;
     
     /**
-     * @orm:ManyToOne(targetEntity="Category")
-     * @orm:JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      * 
      * @var Category $category
      */
     protected $category;
     
     /**
-     * @orm:ManyToOne(targetEntity="User", inversedBy="posts")
-     * @orm:JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * 
      * @var User $user
      */
     protected $user;
     
     /**
-     * @orm:ManyToMany(targetEntity="Tag")
-     * @orm:JoinTable(name="post_tag",
-     *     joinColumns={@orm:JoinColumn(name="post_id", referencedColumnName="id")},
-     *     inverseJoinColumns={@orm:JoinColumn(name="tag_id", referencedColumnName="id")}
+     * @ORM\ManyToMany(targetEntity="Tag")
+     * @ORM\JoinTable(name="post_tag",
+     *     joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="tag_id", referencedColumnName="id")}
      * )
      * 
      * @var ArrayCollection $tags
@@ -234,7 +235,7 @@ class Post
     /**
      * Invoked before the entity is updated.
      * 
-     * @orm:PreUpdate
+     * @ORM\PreUpdate
      */
     public function preUpdate()
     {
