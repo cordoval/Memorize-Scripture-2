@@ -11,7 +11,7 @@ use Cordova\MemorizeScriptureBundle\Entity\Session;
 class UserAdmin extends Admin
 {
     protected $list = array(
-        //this listing has to change ...
+        //this listing has to change
         'title' => array('identifier' => true),
         'author',
         'enabled',
