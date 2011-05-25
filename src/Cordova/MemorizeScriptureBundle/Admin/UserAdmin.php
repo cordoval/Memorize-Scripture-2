@@ -11,6 +11,7 @@ use Cordova\MemorizeScriptureBundle\Entity\Session;
 class UserAdmin extends Admin
 {
     protected $list = array(
+        
         'title' => array('identifier' => true),
         'author',
         'enabled',
