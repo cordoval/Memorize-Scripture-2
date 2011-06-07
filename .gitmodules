@@ -55,3 +55,6 @@
 [submodule "vendor/doctrine-common"]
 	path = vendor/doctrine-common
 	url = git://github.com/doctrine/common.git
+[submodule "vendor/symfony"]
+	path = vendor/symfony
+	url = git://github.com/symfony/symfony.git
