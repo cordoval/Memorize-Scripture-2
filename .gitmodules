@@ -25,9 +25,6 @@
 [submodule "vendor/doctrine-migrations"]
 	path = vendor/doctrine-migrations
 	url = git://github.com/doctrine/migrations.git
-[submodule "vendor/doctrine-common"]
-	path = vendor/doctrine-common
-	url = git://github.com/doctrine/common.git
 [submodule "src/Sonata/jQueryBundle"]
 	path = src/Sonata/jQueryBundle
 	url = git://github.com/sonata-project/jQueryBundle.git
