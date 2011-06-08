@@ -1,3 +1,6 @@
 
 MemorizeScripture:
     resource: "@MemorizeScriptureBundle/Resources/config/routing.yml"
+Cordova:
+    resource: "@CordovaFilmothequeBundle/Resources/config/routing.yml"
+    prefix: /cordova

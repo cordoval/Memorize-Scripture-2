@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             //new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Cordova\MemorizeScriptureBundle\MemorizeScriptureBundle(),
+            new Cordova\FilmothequeBundle\CordovaFilmothequeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -58,3 +58,6 @@
 [submodule "vendor/symfony"]
 	path = vendor/symfony
 	url = git://github.com/symfony/symfony.git
+[submodule "src/Cordova/FilmothequeBundle"]
+	path = src/Cordova/FilmothequeBundle
+	url = https://cordoval@github.com/cordoval/FilmothequeBundle.git
