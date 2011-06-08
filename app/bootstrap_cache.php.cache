@@ -64,7 +64,7 @@ abstract class Kernel implements KernelInterface
     protected $name;
     protected $startTime;
     protected $classes;
-    const VERSION = '2.0.0-DEV';
+    const VERSION = '2.0.0-BETA5-DEV';
     public function __construct($environment, $debug)
     {
         $this->environment = $environment;
@@ -304,7 +304,7 @@ abstract class Kernel implements KernelInterface
         require_once $cache;
         $this->container = new $class();
         $this->container->set('kernel', $this);
-        if (!$fresh && 'cli' !== php_sapi_name()) {
+        if (!$fresh) {
             $this->container->get('cache_warmer')->warmUp($this->container->getParameter('kernel.cache_dir'));
         }
     }
@@ -1698,14 +1698,12 @@ class Request
     }
     public function getHttpHost()
     {
-        $host   = $this->getHost();
         $scheme = $this->getScheme();
-        $name   = $this->server->get('SERVER_NAME');
         $port   = $this->getPort();
         if (('http' == $scheme && $port == 80) || ('https' == $scheme && $port == 443)) {
-            return $name;
+            return $this->getHost();
         }
-        return $name.':'.$port;
+        return $this->getHost().':'.$port;
     }
     public function getRequestUri()
     {
@@ -2508,17 +2506,13 @@ class Response
     {
         return 404 === $this->statusCode;
     }
-    public function isRedirect()
+    public function isRedirect($location = null)
     {
-        return in_array($this->statusCode, array(201, 301, 302, 303, 307));
+        return in_array($this->statusCode, array(201, 301, 302, 303, 307)) && (null === $location ?: $location == $this->headers->get('Location'));
     }
     public function isEmpty()
     {
         return in_array($this->statusCode, array(201, 204, 304));
-    }
-    public function isRedirected($location)
-    {
-        return $this->isRedirect() && $location == $this->headers->get('Location');
     }
     protected function fixContentType()
     {
@@ -2536,8 +2530,8 @@ class UniversalClassLoader
 {
     private $namespaces = array();
     private $prefixes = array();
-    private $namespaceFallback = array();
-    private $prefixFallback = array();
+    private $namespaceFallbacks = array();
+    private $prefixFallbacks = array();
     public function getNamespaces()
     {
         return $this->namespaces;
@@ -2546,21 +2540,21 @@ class UniversalClassLoader
     {
         return $this->prefixes;
     }
-    public function getNamespaceFallback()
+    public function getNamespaceFallbacks()
     {
-        return $this->namespaceFallback;
+        return $this->namespaceFallbacks;
     }
-    public function getPrefixFallback()
+    public function getPrefixFallbacks()
     {
-        return $this->prefixFallback;
+        return $this->prefixFallbacks;
     }
-    public function registerNamespaceFallback($dirs)
+    public function registerNamespaceFallbacks(array $dirs)
     {
-        $this->namespaceFallback = (array) $dirs;
+        $this->namespaceFallbacks = $dirs;
     }
-    public function registerPrefixFallback($dirs)
+    public function registerPrefixFallbacks(array $dirs)
     {
-        $this->prefixFallback = (array) $dirs;
+        $this->prefixFallbacks = $dirs;
     }
     public function registerNamespaces(array $namespaces)
     {
@@ -2610,7 +2604,7 @@ class UniversalClassLoader
                     }
                 }
             }
-            foreach ($this->namespaceFallback as $dir) {
+            foreach ($this->namespaceFallbacks as $dir) {
                 $file = $dir.DIRECTORY_SEPARATOR.str_replace('\\', DIRECTORY_SEPARATOR, $class).'.php';
                 if (file_exists($file)) {
                     return $file;
@@ -2627,7 +2621,7 @@ class UniversalClassLoader
                     }
                 }
             }
-            foreach ($this->prefixFallback as $dir) {
+            foreach ($this->prefixFallbacks as $dir) {
                 $file = $dir.DIRECTORY_SEPARATOR.str_replace('_', DIRECTORY_SEPARATOR, $class).'.php';
                 if (file_exists($file)) {
                     return $file;

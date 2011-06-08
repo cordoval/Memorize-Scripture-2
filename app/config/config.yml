@@ -104,9 +104,12 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    class:
-        model:
-            user: Cordova\MemorizeScriptureBundle\Entity\User
+    use_listener: true
+#    class:
+#        model:
+#            user: Cordova\MemorizeScriptureBundle\Entity\User
+    user_class: Cordova\MemorizeScriptureBundle\Entity\User
+
 #        form:
 #            user: ~
 #            change_password: ~
@@ -124,6 +127,7 @@ fos_user:
         algorithm: sha512
         encode_as_base64: true
         iterations: 5
+
 #    form_name:
 #        user: ~
 #        change_password: ~

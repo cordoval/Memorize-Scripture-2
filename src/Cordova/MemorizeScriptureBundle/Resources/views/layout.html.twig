@@ -27,7 +27,7 @@
                     </li>-->
 		    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 		    <li>
-			<a href="{{ path('_security_logout') }}">
+			<a href="{{ path('fos_user_security_logout') }}">
 				Logout
 			</a>
 		    </li>
