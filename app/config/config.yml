@@ -34,16 +34,9 @@ twig:
         resources: ['MemorizeScriptureBundle:Form:fields.html.twig']
 
 # Assetic Configuration
-#assetic: ~
-#    debug:          %kernel.debug%
-#    use_controller: false
-#    filters:
-#        cssrewrite: ~
-#        closure:    ~
 assetic:
     debug:         %kernel.debug%
     use_controller: %kernel.debug%
- # Uncomment the following line if your java bin is in a different location
     java: %java_path%
     filters:
         cssrewrite: ~
@@ -65,7 +58,7 @@ doctrine:
                 dbname:   %database_name%
                 user:     %database_user%
                 password: %database_password%
-#                logging:  %kernel.debug%
+
    orm:
        auto_generate_proxy_classes: %kernel.debug%
        auto_mapping: true
@@ -79,77 +72,20 @@ doctrine:
 
 
 ## Swiftmailer Configuration
-#swiftmailer:
-#    transport:  smtp
-#    encryption: ssl
-#    auth_mode:  login
-#    host:       smtp.gmail.com
-#    username:   xxxxxxxx
-#    password:   xxxxxxxx
 swiftmailer:
     transport:  %mailer_transport%
-#    host:       %mailer_host%
     username:   %mailer_user%
     password:   %mailer_password%
-#    encryption: %mailer_encryption%
-#    auth_mode:  %mailer_auth_mode%
-#    port:       %mailer_port%
-#    spool:      %mailer_spool%
-#    delivery_address: %mailer_delivery_address%
-#    disable_delivery: %mailer_disable_delivery%
-
-#jms_security_extra:
-#    secure_controllers:  true
-#    secure_all_services: false
 
 fos_user:
     db_driver: orm
     firewall_name: main
     use_listener: true
-#    class:
-#        model:
-#            user: Cordova\MemorizeScriptureBundle\Entity\User
     user_class: Cordova\MemorizeScriptureBundle\Entity\User
 
-#        form:
-#            user: ~
-#            change_password: ~
-#            reset_password: ~
-#        controller:
-#            user: ~
-#            security: ~
-#        util:
-#            email_canonicalizer: ~
-#            username_canonicalizer: ~
-#    service:
-#        util:
-#            mailer: ~
+
     encoder:
         algorithm: sha512
         encode_as_base64: true
         iterations: 5
 
-#    form_name:
-#        user: ~
-#        change_password: ~
-#        reset_password: ~
-#    form_validation_groups:
-#        user: ~
-#    email:
-#        from_email: ~
-#        confirmation:
-#            enabled: ~
-#            template: ~
-#        resetting_password:
-#            template: ~
-#            token_ttl: ~
-#    template:
-#        engine: ~
-#        theme: ~
-#    group:
-#        class:
-#            model: ~
-#            controller: ~
-#            form: ~
-#        form_name: ~
-#        form_validation_groups: ~
