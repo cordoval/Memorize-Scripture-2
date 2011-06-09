@@ -58,10 +58,11 @@ doctrine:
                 dbname:   %database_name%
                 user:     %database_user%
                 password: %database_password%
+                charset:  UTF8
 
    orm:
        auto_generate_proxy_classes: %kernel.debug%
-       auto_mapping: true
+#       auto_mapping: true
        default_entity_manager:   default
        entity_managers:
            default:
@@ -69,6 +70,7 @@ doctrine:
                mappings:
                    FOSUserBundle: ~
                    MemorizeScriptureBundle: ~
+                   CordovaFilmothequeBundle: ~
 
 
 ## Swiftmailer Configuration
