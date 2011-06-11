@@ -17,14 +17,14 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /change-password
 
-#admin:
-#        resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-#        prefix: /admin
+admin:
+        resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+        prefix: /admin
 
-#_sonata_admin:
-#        resource: .
-#        type: sonata_admin
-#        prefix: /admin
+_sonata_admin:
+        resource: .
+        type: sonata_admin
+        prefix: /admin
 
 MemorizeScripture_tracker:
     pattern:  /tracker
@@ -37,7 +37,7 @@ MemorizeScripture_addRecitation:
 MemorizeScripture_createSession:
     pattern:  /tracker/createsession
     defaults: { _controller: MemorizeScriptureBundle:Tracker:createSession }
-  
+
 MemorizeScripture_makeSessionActive:
     pattern:  /tracker/makesessionactive/{id}
     defaults: { _controller: MemorizeScriptureBundle:Tracker:makeSessionActive }
@@ -45,7 +45,7 @@ MemorizeScripture_makeSessionActive:
 homepage:
     pattern:  /
     defaults: { _controller: MemorizeScriptureBundle:Blog:index }
-        
+
 show_page:
     pattern:  /{page}
     defaults: { _controller: MemorizeScriptureBundle:Pages:show }

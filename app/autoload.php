@@ -10,7 +10,7 @@ $loader->registerNamespaces(array(
     'FOS'                              => __DIR__.'/../vendor/bundles',
     //'DoctrineFixturesBundle'           => __DIR__.'/../vendor/bundles',
     'Knplabs'                          => __DIR__.'/../src',
-    //'Sonata'                           => __DIR__.'/../src',
+    'Sonata'                           => __DIR__.'/../src',
     //'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib', old way
     'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     'Doctrine\\Common'                 => __DIR__.'/../vendor/doctrine-common/lib',
