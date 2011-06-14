@@ -17,15 +17,6 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /change-password
 
-admin:
-        resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-        prefix: /admin
-
-_sonata_admin:
-        resource: .
-        type: sonata_admin
-        prefix: /admin
-
 MemorizeScripture_tracker:
     pattern:  /tracker
     defaults: { _controller: MemorizeScriptureBundle:Tracker:index }

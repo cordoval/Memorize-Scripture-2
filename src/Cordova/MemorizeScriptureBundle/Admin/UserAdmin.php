@@ -11,35 +11,30 @@ use Cordova\MemorizeScriptureBundle\Entity\Session;
 class UserAdmin extends Admin
 {
     protected $list = array(
-        // luis123
-        'title' => array('identifier' => true),
-        'author',
-        'enabled',
-        'commentsEnabled',
+        'id' => array('identifier' => true),
+        'firstName',
+        'lastName',
+        'posts',
+        'sessions',
+        'activesessionid',
     );
 
     protected $form = array(
-        'author'  => array('edit' => 'list'),
-        'enabled' => array('form_field_options' => array('required' => false)),
-        'title',
-        'abstract',
-        'content',
-        'tags'     => array('form_field_options' => array('expanded' => true)),
-        'commentsCloseAt',
-        'commentsEnabled' => array('form_field_options' => array('required' => false)),
+        'id'  => array('edit' => 'list'),
+        'firstName',
+        'lastName',
+        'posts',
+        'sessions',
+        'activesessionid',
     );
 
     protected $filter = array(
-        'title',
-        'enabled',
-        'tags' => array('filter_field_options' => array('expanded' => true, 'multiple' => true))
+        'firstName',
+        'lastName',
     );
 
     public function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper
-          ->add('author')
-          ->add('image', array(), array('edit' => 'list', 'link_parameters' => array('context' => 'news')))
-          ->add('commentsDefaultStatus', array('choices' => Comment::getStatusList()), array('type' => 'choice'));
+
     }
 }
