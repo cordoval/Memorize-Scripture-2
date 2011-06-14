@@ -93,8 +93,13 @@ fos_user:
 
 
 services:
-   adminuserlabel:
+   cordova.memorizescripturebundle.admin.user:
       class: Cordova\MemorizeScriptureBundle\Admin\UserAdmin
       tags:
         - { name: sonata.admin, manager_type: orm, label: user }
       arguments: [null, Cordova\MemorizeScriptureBundle\Entity\User, MemorizeScriptureBundle:UserAdmin]
+   cordova.memorizescripturebundle.admin.session:
+      class: Cordova\MemorizeScriptureBundle\Admin\SessionAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, label: session }
+      arguments: [null, Cordova\MemorizeScriptureBundle\Entity\Session, MemorizeScriptureBundle:SessionAdmin]

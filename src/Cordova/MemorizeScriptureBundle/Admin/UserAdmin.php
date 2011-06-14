@@ -10,21 +10,26 @@ use Cordova\MemorizeScriptureBundle\Entity\Session;
 
 class UserAdmin extends Admin
 {
-    protected $list = array(
+    /*protected $list = array(
         'id' => array('identifier' => true),
         'firstName',
         'lastName',
-        'posts',
-        'sessions',
         'activesessionid',
-    );
+    );*/
+
+    protected function configureListFields(ListMapper $list) // optional
+    {
+          $list->add('id', array('identifier' => true, 'type' => 'string'));
+          $list->add('firstName', array('type' => 'string'));
+          $list->add('lastName', array('type' => 'string'));
+          $list->add('activesessionid', array('type' => 'string'));
+    }
 
     protected $form = array(
         'id'  => array('edit' => 'list'),
         'firstName',
         'lastName',
-        'posts',
-        'sessions',
+        //'sessions',
         'activesessionid',
     );
 

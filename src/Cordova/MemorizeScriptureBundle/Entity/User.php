@@ -3,8 +3,8 @@
 namespace Cordova\MemorizeScriptureBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-//use Symfony\Component\Security\Core\User\UserInterface; 
-//(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository") 
+//use Symfony\Component\Security\Core\User\UserInterface;
+//(repositoryClass="Cordova\MemorizeScriptureBundle\Entity\UserRepository")
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -35,27 +35,27 @@ class User extends BaseUser implements \Serializable
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * 
+     *
      * @var integer $id
      */
     protected $id;
-    
+
     /**
      * @ORM\Column(type="string", length="255", name="first_name", nullable=true)
      * @var string $firstName
      */
     protected $firstName;
-    
+
     /**
      * @ORM\Column(type="string", length="255", name="last_name",nullable=true)
      * @var string $lastName
      */
     protected $lastName;
-    
+
     /**
      * @ORM\OneToMany(targetEntity="Post", mappedBy="user")
      * @ORM\OrderBy({"createdAt" = "DESC"})
-     * 
+     *
      * @var ArrayCollection $posts
      */
     protected $posts;
@@ -63,7 +63,7 @@ class User extends BaseUser implements \Serializable
     /**
      * @ORM\OneToMany(targetEntity="Session", mappedBy="user")
      * @ORM\OrderBy({"createdAt" = "DESC"})
-     * 
+     *
      * @var ArrayCollection $sessions
      */
     protected $sessions;
@@ -73,50 +73,50 @@ class User extends BaseUser implements \Serializable
      * @var string $activesessionid
      */
     protected $activesessionid;
-    
+
     /**
      * Gets the id.
-     * 
+     *
      * @return integer The id
      */
     public function getId()
     {
         return $this->id;
     }
-    
+
     /**
      * Gets the user's first name.
-     * 
+     *
      * @return string The first name
      */
     public function getFirstName()
     {
         return $this->firstName;
     }
-    
+
     /**
      * Sets the user's first name.
-     * 
+     *
      * @param string $value The first name
      */
     public function setFirstName( $value )
     {
         $this->firstName = $value;
     }
-    
+
     /**
      * Gets the user's last name.
-     * 
+     *
      * @return string The last name
      */
     public function getLastName()
     {
         return $this->lastName;
     }
-    
+
     /**
      * Sets the user's last name.
-     * 
+     *
      * @param string $value The last name
      */
     public function setLastName( $value )
@@ -134,10 +134,10 @@ class User extends BaseUser implements \Serializable
         $value->setUser($this);
         $this->sessions->add($value);
     }
-    
+
     /**
      * Gets all of the user's sessions
-     * 
+     *
      * @return ArrayCollection The user's sessions
      */
     public function getSessions()
@@ -156,13 +156,27 @@ class User extends BaseUser implements \Serializable
         parent::__construct();
     }
 
-    function setActiveSession($id) {
+    /**
+     * Gets activesessionid
+     *
+     * @return string activesessionid
+     */
+    function getActivesessionid() {
+        return $this->activesessionid;
+    }
+
+    /**
+     * Sets activesessionid
+     *
+     * @param string $activesessionid the activesessionid
+     */
+    function setActivesessionid($id) {
         $this->activesessionid = $id;
     }
-    
+
     /**
      * Gets the full name of the user.
-     * 
+     *
      * @return string The full name
      */
     public function getFullName()
@@ -170,5 +184,5 @@ class User extends BaseUser implements \Serializable
         return sprintf( '%s %s', $this->firstName, $this->lastName );
     }
 
-	
+
 }
