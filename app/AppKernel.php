@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+
             new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
             new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
@@ -41,7 +42,7 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function init()
+/*    public function init()
     {
         if ($this->debug) {
             ini_set('display_errors', 1);
@@ -53,7 +54,7 @@ class AppKernel extends Kernel
         } else {
             ini_set('display_errors', 0);
         }
-    }
+    }*/
 
     public function registerRootDir()
     {

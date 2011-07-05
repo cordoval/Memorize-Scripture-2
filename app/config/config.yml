@@ -8,8 +8,7 @@ knplabs_menu:
     twig: true  # this is to use the twig extension
 
 framework:
-    #esi:             ~
-    secret:          %csrf_secret%
+    secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
