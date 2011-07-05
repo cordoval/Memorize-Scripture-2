@@ -10,7 +10,7 @@ $loader->registerNamespaces(array(
     'Cordova'                          => __DIR__.'/../src',
     'FOS'                              => __DIR__.'/../vendor/bundles',
     'Knplabs'                          => __DIR__.'/../src',
-    'Sonata'                           => __DIR__.'/../src',
+    'Sonata'                           => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     'Symfony'          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
     'Sensio'           => __DIR__.'/../vendor/bundles',

@@ -57,3 +57,26 @@
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
 
+[DoctrineFixturesBundle]
+    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[CommentBundle]
+    git=https://github.com/FriendsOfSymfony/FOSCommentBundle.git
+    target=/bundles/FOS/CommentBundle
+
+[AdminBundle]
+    git=https://github.com/sonata-project/SonataAdminBundle.git
+    target=/bundles/Sonata/AdminBundle
+
+[BluePrintBundle]
+    git=https://github.com/sonata-project/SonataBluePrintBundle.git
+    target=/bundles/Sonata/BluePrintBundle
+
+[jQueryBundle]
+    git=https://github.com/sonata-project/SonatajQueryBundle.git
+    target=/bundles/Sonata/jQueryBundle
+
+[UserBundle]
+    git=https://github.com/FriendsOfSymfony/FOSUserBundle.git
+    target=/bundles/FOS/UserBundle

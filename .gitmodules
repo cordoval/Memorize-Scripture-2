@@ -1,21 +1,3 @@
-[submodule "src/Sonata/jQueryBundle"]
-	path = src/Sonata/jQueryBundle
-	url = git://github.com/sonata-project/jQueryBundle.git
-[submodule "src/Sonata/BluePrintBundle"]
-	path = src/Sonata/BluePrintBundle
-	url = git://github.com/sonata-project/BluePrintBundle.git
-[submodule "src/Sonata/AdminBundle"]
-	path = src/Sonata/AdminBundle
-	url = git://github.com/sonata-project/AdminBundle.git
-[submodule "src/Liip/FunctionalTestBundle"]
-	path = src/Liip/FunctionalTestBundle
-	url = git://github.com/liip/FunctionalTestBundle.git
-[submodule "src/FOS/CommentBundle"]
-	path = src/FOS/CommentBundle
-	url = git://github.com/FriendsOfSymfony/CommentBundle.git
-[submodule "src/Knplabs/Bundle/MenuBundle"]
-	path = src/Knplabs/Bundle/MenuBundle
-	url = https://github.com/cordoval/MenuBundle.git
 [submodule "src/Cordova/FilmothequeBundle"]
 	path = src/Cordova/FilmothequeBundle
 	url = https://cordoval@github.com/cordoval/FilmothequeBundle.git

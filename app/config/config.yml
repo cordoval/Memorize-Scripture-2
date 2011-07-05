@@ -27,7 +27,6 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    extensions:       [twig.extension.debug]
     form:
         resources: ['MemorizeScriptureBundle:Form:fields.html.twig']
 
