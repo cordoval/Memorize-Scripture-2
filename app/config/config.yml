@@ -8,21 +8,19 @@ knplabs_menu:
     twig: true  # this is to use the twig extension
 
 framework:
+    #esi:             ~
+    secret:          %csrf_secret%
+    charset:         UTF-8
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
     translator: { fallback: en }
-    charset:       UTF-8
-    csrf_protection:
-        enabled: true
-    form:
-      enabled: true
-    secret: %csrf_secret%
-
-    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
-    validation:    { enabled: true, enable_annotations: true }
-    templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     session:
         default_locale: %locale%
-        lifetime:       3600
         auto_start:     true
+        lifetime:       3600
         name:           memorizescripture
 
 # Twig Configuration

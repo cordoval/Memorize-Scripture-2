@@ -1,5 +1,8 @@
 _main:
     resource: routing.yml
+_assetic:
+    resource: .
+    type:     assetic
 
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
@@ -9,6 +12,9 @@ _profiler:
     resource: "@WebProfilerBundle/Resources/config/routing/profiler.xml"
     prefix:   /_profiler
 
-_assetic:
-    resource: .
-    type:     assetic
+_configurator:
+    resource: "@SensioDistributionBundle/Resources/config/routing/webconfigurator.xml"
+    prefix:   /_configurator
+
+_main:
+    resource: routing.yml

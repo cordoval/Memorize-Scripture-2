@@ -1,3 +1,7 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
 
 MemorizeScripture:
     resource: "@MemorizeScriptureBundle/Resources/config/routing.yml"
