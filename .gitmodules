@@ -1,30 +1,3 @@
-#[submodule "vendor/zend-log/Zend/Log"]
-#	path = vendor/zend-log/Zend/Log
-#	url = git://github.com/symfony/zend-log.git
-[submodule "vendor/monolog"]
-	path = vendor/monolog
-	url = git://github.com/Seldaek/monolog.git
-[submodule "vendor/swiftmailer"]
-	path = vendor/swiftmailer
-	url = git://github.com/swiftmailer/swiftmailer.git
-[submodule "vendor/assetic"]
-	path = vendor/assetic
-	url = git://github.com/kriswallsmith/assetic.git
-[submodule "vendor/twig"]
-	path = vendor/twig
-	url = git://github.com/fabpot/Twig.git
-[submodule "vendor/twig-extensions"]
-	path = vendor/twig-extensions
-	url = git://github.com/fabpot/Twig-extensions.git
-[submodule "vendor/doctrine-dbal"]
-	path = vendor/doctrine-dbal
-	url = git://github.com/doctrine/dbal.git
-[submodule "vendor/doctrine-data-fixtures"]
-	path = vendor/doctrine-data-fixtures
-	url = git://github.com/doctrine/data-fixtures.git
-[submodule "vendor/doctrine-migrations"]
-	path = vendor/doctrine-migrations
-	url = git://github.com/doctrine/migrations.git
 [submodule "src/Sonata/jQueryBundle"]
 	path = src/Sonata/jQueryBundle
 	url = git://github.com/sonata-project/jQueryBundle.git
@@ -34,30 +7,15 @@
 [submodule "src/Sonata/AdminBundle"]
 	path = src/Sonata/AdminBundle
 	url = git://github.com/sonata-project/AdminBundle.git
-[submodule "vendor/doctrine"]
-	path = vendor/doctrine
-	url = git://github.com/doctrine/doctrine2.git
-[submodule "vendor/bundles/Liip/FunctionalTestBundle"]
-	path = vendor/bundles/Liip/FunctionalTestBundle
+[submodule "src/Liip/FunctionalTestBundle"]
+	path = src/Liip/FunctionalTestBundle
 	url = git://github.com/liip/FunctionalTestBundle.git
-[submodule "vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle"]
-	path = vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle
-	url = git://github.com/symfony/DoctrineFixturesBundle.git
 [submodule "src/FOS/CommentBundle"]
 	path = src/FOS/CommentBundle
 	url = git://github.com/FriendsOfSymfony/CommentBundle.git
-[submodule "vendor/bundles/FOS/UserBundle"]
-	path = vendor/bundles/FOS/UserBundle
-	url = https://github.com/cordoval/UserBundle.git
 [submodule "src/Knplabs/Bundle/MenuBundle"]
 	path = src/Knplabs/Bundle/MenuBundle
 	url = https://github.com/cordoval/MenuBundle.git
-[submodule "vendor/doctrine-common"]
-	path = vendor/doctrine-common
-	url = git://github.com/doctrine/common.git
-[submodule "vendor/symfony"]
-	path = vendor/symfony
-	url = git://github.com/symfony/symfony.git
 [submodule "src/Cordova/FilmothequeBundle"]
 	path = src/Cordova/FilmothequeBundle
 	url = https://cordoval@github.com/cordoval/FilmothequeBundle.git
