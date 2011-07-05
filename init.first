@@ -1,1 +1,0 @@
-./symfony2project generate:project MemorizeScripture Cordova ../MemorizeScripture --controller="Tracker" --session-start="true" --session-name="memorizescripture" --orm="doctrine" --assetic --swiftmailer --doctrine-migration --doctrine-fixtures 
