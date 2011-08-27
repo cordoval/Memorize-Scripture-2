@@ -6,10 +6,10 @@ security:
             id: fos_user.user_manager
 
     firewalls:
-        secondary:
-            pattern:      ^/(css|js)/
+#        secondary:
+#            pattern:      ^/(css|js|ajax|icons)/
 #            anonymous:    true
-            security:     false
+#            security:     false
         main:
             pattern:      .*
             form-login:

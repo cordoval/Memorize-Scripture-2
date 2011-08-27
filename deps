@@ -57,10 +57,6 @@
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
 
-[DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
-
 [CommentBundle]
     git=https://github.com/FriendsOfSymfony/FOSCommentBundle.git
     target=/bundles/FOS/CommentBundle
